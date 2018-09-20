@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Design Patterns &mdash; JupyterLab 0.18.4 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CSS Patterns" href="css.html" />
+    <link rel="prev" title="Notebook" href="notebook.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> JupyterLab
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.18.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/starting.html">Starting JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/faq.html">Frequently Asked Questions (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/changelog.html">JupyterLab Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/interface.html">The JupyterLab Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/urls.html">JupyterLab URLs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/files.html">Working with Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/file_editor.html">Text Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/notebook.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/code_console.html">Code Consoles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/terminal.html">Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/running.html">Managing Kernels and Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/commands.html">Command Palette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/documents_kernels.html">Documents and Kernels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/file_formats.html">File and Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/jupyterhub.html">JupyterLab on JupyterHub</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="repo.html">General Codebase Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extension_dev.html">Extension Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents.html">Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents.html#overview-of-document-architecture">Overview of document architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html">Notebook</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Design Patterns</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#typescript">TypeScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initialization-options">Initialization Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contentfactory-option">ContentFactory Option</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#static-namespace">Static Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#private-module-namespace">Private Module Namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disposables">Disposables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#messages">Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#models">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getters-vs-methods">Getters vs. Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-structures">Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dom-events">DOM Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#promises">Promises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-names">Command Names</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="css.html">CSS Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Writing Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualdom.html">Virtual DOM and React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding_content.html">Adding Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xkcd_extension_tutorial.html">Let’s Make an xkcd JupyterLab Extension</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JupyterLab</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+  <li>Design Patterns</li>
+
+    
+    <li class="wy-breadcrumbs-aside">
+    
+      
+      
+        <a href="https://github.com/denlly/jupyter-doc/blob/master/docs/source/developer/patterns.rst" class="fa fa-github"> Edit on GitHub</a>
+      
+      
+    
+    </li>
+    <li class="wy-breadcrumbs-aside">
+      <a href="https://jupyter.org/documentation">
+        <img src="../_static/jupyter_logo.svg"></img>
+        Jupyter
+      </a>
+      &vert;
+      &nbsp;
+    </li>
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="design-patterns">
+<h1>Design Patterns<a class="headerlink" href="#design-patterns" title="Permalink to this headline">¶</a></h1>
+<p>There are several design patterns that are repeated throughout the
+repository. This guide is meant to supplement the <a class="reference external" href="https://github.com/jupyterlab/jupyterlab/wiki/TypeScript-Style-Guide">TypeScript Style
+Guide</a>.</p>
+<div class="section" id="typescript">
+<h2>TypeScript<a class="headerlink" href="#typescript" title="Permalink to this headline">¶</a></h2>
+<p>TypeScript is used in all of the source code. TypeScript is used because
+it provides features from the most recent EMCAScript 6 standards, while
+providing type safety. The TypeScript compiler eliminates an entire
+class of bugs, while making it much easier to refactor code.</p>
+</div>
+<div class="section" id="initialization-options">
+<h2>Initialization Options<a class="headerlink" href="#initialization-options" title="Permalink to this headline">¶</a></h2>
+<p>Objects will typically have an <code class="docutils literal notranslate"><span class="pre">IOptions</span></code> interface for initializing
+the widget. The use of this interface enables options to be later added
+while preserving backward compatibility.</p>
+</div>
+<div class="section" id="contentfactory-option">
+<h2>ContentFactory Option<a class="headerlink" href="#contentfactory-option" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">A common option for a widget is a <code class="docutils literal notranslate"><span class="pre">IContentFactory</span></code>, which is used
+to customize the child content in the widget.</div>
+<div class="line">If not given, a <code class="docutils literal notranslate"><span class="pre">defaultRenderer</span></code> instance is used if no arguments
+are required. In this way, widgets can be customized without
+subclassing them, and widgets can support customization of their
+nested content.</div>
+</div>
+</div>
+<div class="section" id="static-namespace">
+<h2>Static Namespace<a class="headerlink" href="#static-namespace" title="Permalink to this headline">¶</a></h2>
+<p>An object class will typically have an exported static namespace sharing
+the same name as the object. The namespace is used to declutter the
+class definition.</p>
+</div>
+<div class="section" id="private-module-namespace">
+<h2>Private Module Namespace<a class="headerlink" href="#private-module-namespace" title="Permalink to this headline">¶</a></h2>
+<p>The “Private” module namespace is used to group variables and functions
+that are not intended to be exported and may have otherwise existed as
+module-level variables and functions. The use of the namespace also
+makes it clear when a variable access is to an imported name or from the
+module itself. Finally, the namespace enables the entire section to be
+collapsed in an editor if desired.</p>
+</div>
+<div class="section" id="disposables">
+<h2>Disposables<a class="headerlink" href="#disposables" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">JavaScript does not support “destructors”, so the <code class="docutils literal notranslate"><span class="pre">IDisposable</span></code>
+pattern is used to ensure resources are freed and can be claimed by
+the Garbage Collector when no longer needed. It should always be safe
+to <code class="docutils literal notranslate"><span class="pre">dispose()</span></code> of an object more than once. Typically the object
+that creates another object is responsible for calling the dispose
+method of that object unless explicitly stated otherwise.</div>
+<div class="line">To mirror the pattern of construction, <code class="docutils literal notranslate"><span class="pre">super.dispose()</span></code> should be
+called last in the <code class="docutils literal notranslate"><span class="pre">dispose()</span></code> method if there is a parent class.
+Make sure any signal connections are cleared in either the local or
+parent <code class="docutils literal notranslate"><span class="pre">dispose()</span></code> method. Use a sentinel value to guard against
+reentry, typically by checking if an internal value is null, and then
+immediately setting the value to null. A subclass should never
+override the <code class="docutils literal notranslate"><span class="pre">isDisposed</span></code> getter, because it short-circuits the
+parent class getter. The object should not be considered disposed
+until the base class <code class="docutils literal notranslate"><span class="pre">dispose()</span></code> method is called.</div>
+</div>
+</div>
+<div class="section" id="messages">
+<h2>Messages<a class="headerlink" href="#messages" title="Permalink to this headline">¶</a></h2>
+<p>Messages are intended for many-to-one communication where outside
+objects influence another object. Messages can be conflated and
+processed as a single message. They can be posted and handled on the
+next animation frame.</p>
+</div>
+<div class="section" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<p>Signals are intended for one-to-many communication where outside objects
+react to changes on another object. Signals are always emitted with the
+sender as the first argument, and contain a single second argument with
+the payload. Signals should generally not be used to trigger the
+“default” behavior for an action, but to enable others to trigger
+additional behavior. If a “default” behavior is intended to be provided
+by another object, then a callback should be provided by that object.
+Wherever possible as signal connection should be made with the pattern
+<code class="docutils literal notranslate"><span class="pre">.connect(this._onFoo,</span> <span class="pre">this)</span></code>. Providing the <code class="docutils literal notranslate"><span class="pre">this</span></code> context enables
+the connection to be properly cleared by <code class="docutils literal notranslate"><span class="pre">clearSignalData(this)</span></code>.
+Using a private method avoids allocating a closure for each connection.</p>
+</div>
+<div class="section" id="models">
+<h2>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h2>
+<p>Some of the more advanced widgets have a model associated with them. The
+common pattern used is that the model is settable and must be set
+outside of the constructor. This means that any consumer of the widget
+must account for a model that may be <code class="docutils literal notranslate"><span class="pre">null</span></code>, and may change at any
+time. The widget should emit a <code class="docutils literal notranslate"><span class="pre">modelChanged</span></code> signal to enable
+consumers to handle a change in model. The reason to enable a model to
+swap is that the same widget could be used to display different model
+content while preserving the widget’s location in the application. The
+reason the model cannot be provided in the constructor is the
+initialization required for a model may have to call methods that are
+subclassed. The subclassed methods would be called before the subclass
+constructor has finished evaluating, resulting in undefined state.</p>
+</div>
+<div class="section" id="getters-vs-methods">
+<span id="id1"></span><h2>Getters vs. Methods<a class="headerlink" href="#getters-vs-methods" title="Permalink to this headline">¶</a></h2>
+<p>Prefer a method when the return value must be computed each time. Prefer
+a getter for simple attribute lookup. A getter should yield the same
+value every time.</p>
+</div>
+<div class="section" id="data-structures">
+<h2>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h2>
+<p>For public API, we have three options: JavaScript <code class="docutils literal notranslate"><span class="pre">Array</span></code>,
+<code class="docutils literal notranslate"><span class="pre">IIterator</span></code>, and <code class="docutils literal notranslate"><span class="pre">ReadonlyArray</span></code> (an interface defined by
+TypeScript).</p>
+<p>Prefer an <code class="docutils literal notranslate"><span class="pre">Array</span></code> for:</p>
+<ul class="simple">
+<li>A value that is meant to be mutable.</li>
+</ul>
+<p>Prefer a <code class="docutils literal notranslate"><span class="pre">ReadonlyArray</span></code></p>
+<ul class="simple">
+<li>A return value is the result of a newly allocated array, to avoid the
+extra allocation of an iterator.</li>
+<li>A signal payload - since it will be consumed by multiple listeners.</li>
+<li>The values may need to be accessed randomly.</li>
+<li>A public attribute that is inherently static.</li>
+</ul>
+<p>Prefer an <code class="docutils literal notranslate"><span class="pre">IIterator</span></code> for:</p>
+<ul class="simple">
+<li>A return value where the value is based on an internal data structure
+but the value should not need to be accessed randomly.</li>
+<li>A set of return values that can be computed lazily.</li>
+</ul>
+</div>
+<div class="section" id="dom-events">
+<h2>DOM Events<a class="headerlink" href="#dom-events" title="Permalink to this headline">¶</a></h2>
+<p>If an object instance should respond to DOM events, create a
+<code class="docutils literal notranslate"><span class="pre">handleEvent</span></code> method for the class and register the object instance as
+the event handler. The <code class="docutils literal notranslate"><span class="pre">handleEvent</span></code> method should switch on the event
+type and could call private methods to carry out the actions. Often a
+widget class will add itself as an event listener to its own node in the
+<code class="docutils literal notranslate"><span class="pre">onAfterAttach</span></code> method with something like
+<code class="docutils literal notranslate"><span class="pre">this.node.addEventListener('mousedown',</span> <span class="pre">this)</span></code> and unregister itself
+in the <code class="docutils literal notranslate"><span class="pre">onBeforeDetach</span></code> method with
+<code class="docutils literal notranslate"><span class="pre">this.node.removeEventListener('mousedown',</span> <span class="pre">this)</span></code> Dispatching events
+from the <code class="docutils literal notranslate"><span class="pre">handleEvent</span></code> method makes it easier to trace, log, and debug
+event handling. For more information about the <code class="docutils literal notranslate"><span class="pre">handleEvent</span></code> method,
+see the
+<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/EventListener">EventListener</a>
+API.</p>
+</div>
+<div class="section" id="promises">
+<h2>Promises<a class="headerlink" href="#promises" title="Permalink to this headline">¶</a></h2>
+<p>We use Promises for asynchronous function calls, and a shim for browsers
+that do not support them. When handling a resolved or rejected Promise,
+make sure to check for the current state (typically by checking an
+<code class="docutils literal notranslate"><span class="pre">.isDisposed</span></code> property) before proceeding.</p>
+</div>
+<div class="section" id="command-names">
+<h2>Command Names<a class="headerlink" href="#command-names" title="Permalink to this headline">¶</a></h2>
+<p>Commands used in the application command registry should be formatted as
+follows: <code class="docutils literal notranslate"><span class="pre">package-name:verb-noun</span></code>. They are typically grouped into a
+<code class="docutils literal notranslate"><span class="pre">CommandIDs</span></code> namespace in the extension that is not exported.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="css.html" class="btn btn-neutral float-right" title="CSS Patterns" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="notebook.html" class="btn btn-neutral" title="Notebook" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Project Jupyter.<br/>
+        The Jupyter Trademark is registered with the U.S. Patent &amp Trademark Office.
+        
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.18.4',
+            LANGUAGE:'zh-cn',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -36,7 +36,7 @@ from recommonmark.transform import AutoStructify
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.intersphinx',
-    'sphinx.ext.mathjax']
+              'sphinx.ext.mathjax']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -78,7 +78,7 @@ release = version
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = u'zh-cn'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -130,8 +130,8 @@ html_sidebars = {
 # Output for github to be used in links
 html_context = {
     "display_github": True,  # Integrate GitHub
-    "github_user": "jupyterlab",  # Username
-    "github_repo": "jupyterlab",  # Repo name
+    "github_user": "denlly",  # Username
+    "github_repo": "jupyter-doc",  # Repo name
     "github_version": "master",  # Version
     "conf_py_path": "/docs/source/",  # Path in the checkout to the docs root
 }
@@ -176,7 +176,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'jupyterlab', 'JupyterLab Documentation',
+    (master_doc, 'jupyter-doc', 'jupyter Documentation',
      [author], 1)
 ]
 
@@ -191,7 +191,6 @@ texinfo_documents = [
      author, 'JupyterLab', 'One line description of project.',
      'Miscellaneous'),
 ]
-
 
 
 # -- Options for Epub output ----------------------------------------------
@@ -215,7 +214,6 @@ epub_copyright = copyright
 epub_exclude_files = ['search.html']
 
 
-
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
 
@@ -225,14 +223,15 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 # See http://recommonmark.readthedocs.io/en/latest/auto_structify.html
 # See the setup function in current conf.py file in the recommonmark repo
 # https://github.com/rtfd/recommonmark/blob/master/docs/conf.py#L296
-github_doc_root = 'https://github.com/jupyterlab/jupyterlab/tree/master/docs/'
+github_doc_root = 'https://github.com/denlly/jupyter-doc/tree/master/docs'
 
-def setup(app):
-    app.add_config_value('recommonmark_config', {
-        'url_resolver': lambda url: github_doc_root + url,
-        'auto_toc_tree_section': 'Contents',
-        'enable_eval_rst': True,
-        'enable_auto_doc_ref': False,
-    }, True)
-    app.add_transform(AutoStructify)
-    app.add_stylesheet('custom.css')  # may also be an URL
+
+# def setup(app):
+#     app.add_config_value('recommonmark_config', {
+#         'url_resolver': lambda url: github_doc_root + url,
+#         'auto_toc_tree_section': 'Contents',
+#         'enable_eval_rst': True,
+#         'enable_auto_doc_ref': False,
+#     }, True)
+#     app.add_transform(AutoStructify)
+#     app.add_stylesheet('custom.css')  # may also be an URL

@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Notebooks &mdash; JupyterLab 0.18.4 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Code Consoles" href="code_console.html" />
+    <link rel="prev" title="Text Editor" href="file_editor.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> JupyterLab
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.18.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/starting.html">Starting JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/faq.html">Frequently Asked Questions (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/changelog.html">JupyterLab Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="interface.html">The JupyterLab Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urls.html">JupyterLab URLs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">Working with Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_editor.html">Text Editor</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_console.html">Code Consoles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminal.html">Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running.html">Managing Kernels and Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Command Palette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents_kernels.html">Documents and Kernels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_formats.html">File and Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyterhub.html">JupyterLab on JupyterHub</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/repo.html">General Codebase Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/extension_dev.html">Extension Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/documents.html">Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/documents.html#overview-of-document-architecture">Overview of document architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/notebook.html">Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/patterns.html">Design Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/css.html">CSS Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/documentation.html">Writing Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/virtualdom.html">Virtual DOM and React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/adding_content.html">Adding Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/xkcd_extension_tutorial.html">Let’s Make an xkcd JupyterLab Extension</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JupyterLab</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+  <li>Notebooks</li>
+
+    
+    <li class="wy-breadcrumbs-aside">
+    
+      
+      
+        <a href="https://github.com/denlly/jupyter-doc/blob/master/docs/source/user/notebook.rst" class="fa fa-github"> Edit on GitHub</a>
+      
+      
+    
+    </li>
+    <li class="wy-breadcrumbs-aside">
+      <a href="https://jupyter.org/documentation">
+        <img src="../_static/jupyter_logo.svg"></img>
+        Jupyter
+      </a>
+      &vert;
+      &nbsp;
+    </li>
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="notebooks">
+<span id="notebook"></span><h1>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h1>
+<p>Jupyter notebooks are documents that combine live runnable code with
+narrative text (Markdown), equations (LaTeX), images, interactive
+visualizations and other rich output:</p>
+<img alt="../_images/notebook_ui.png" class="jp-screenshot align-center" src="../_images/notebook_ui.png" />
+<p><strong>Jupyter notebooks (.ipynb files) are fully supported in JupyterLab.</strong> The
+<a class="reference external" href="http://nbformat.readthedocs.io/en/latest/">notebook document format</a> used in
+JupyterLab is the same as in the classic Jupyter Notebook. Your existing notebooks
+should open correctly in JupyterLab. If they don’t, please open an issue on our
+<a class="reference external" href="https://github.com/jupyterlab/jupyterlab/issues">GitHub issues</a> page.</p>
+<p id="create-notebook">Create a notebook by clicking the <code class="docutils literal notranslate"><span class="pre">+</span></code> button in the file browser and
+then selecting a kernel in the new Launcher tab:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/QL0IxDAOEc0?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p id="rename-file">A new file is created with a default name. Rename a file by
+right-clicking on its name in the file browser and selecting “Rename”
+from the context menu:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/y3xzXelypjs?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p>The user interface for notebooks in JupyterLab closely follows that of
+the classic Jupyter Notebook. The keyboard shortcuts of the classic
+Notebook continue to work (with command and edit mode). However, a
+number of new things are possible with notebooks in JupyterLab.</p>
+<p id="drag-drop">Drag and drop cells to rearrange your notebook:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/J9xoTGdqWIo?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p id="drag-copy">Drag cells between notebooks to quickly copy content:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/YTNZ5TS2LfU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p id="multiple-views">Create multiple synchronized views of a single notebook:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/SQn9aRc050w?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p id="collapse-code">Collapse and expand code and output using the View menu or the blue
+collapser button on left of each cell:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/WgiX3ZRaTiY?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p id="enable-scrolling">Enable scrolling for long outputs by right-clicking on a cell and
+selecting “Enable Scrolling for Outputs”:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/U4usAUZCv_c?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p id="cell-output-mirror">Create a new synchronized view of a cell’s output:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/Asa_ML45HP8?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p id="tab-completion">Tab completion (activated with the <code class="docutils literal notranslate"><span class="pre">Tab</span></code> key) can now include additional
+information about the types of the matched items:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/MuNr0i8LgpM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p>Note: IPython 6.3.1 has temporarily disabled type annotations.
+To re-enable them, add <code class="docutils literal notranslate"><span class="pre">c.Completer.use_jedi</span> <span class="pre">=</span> <span class="pre">True</span></code> to an
+<a class="reference external" href="http://ipython.readthedocs.io/en/stable/development/config.html">ipython_config.py</a> file.</p>
+<p id="tooltip">The tooltip (activated with <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Tab</span></code>) contains additional
+information about objects:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/TgqMK1SG7XI?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p id="create-console">You can connect a <a class="reference internal" href="code_console.html#code-console"><span class="std std-ref">code console</span></a> to a notebook kernel to have a log of
+computations done in the kernel, in the order in which they were done.
+The attached code console also provides a place to interactively inspect
+kernel state without changing the notebook. Right-click on a notebook
+and select “New Console for Notebook”:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/eq1l7DBngQQ?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="code_console.html" class="btn btn-neutral float-right" title="Code Consoles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="file_editor.html" class="btn btn-neutral" title="Text Editor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Project Jupyter.<br/>
+        The Jupyter Trademark is registered with the U.S. Patent &amp Trademark Office.
+        
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.18.4',
+            LANGUAGE:'zh-cn',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

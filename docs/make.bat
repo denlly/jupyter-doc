@@ -5,11 +5,11 @@ pushd %~dp0
 REM Command file for Sphinx documentation
 
 if "%SPHINXBUILD%" == "" (
-	set SPHINXBUILD=python -msphinx
+	set SPHINXBUILD=sphinx-build
 )
 set SOURCEDIR=source
 set BUILDDIR=build
-set SPHINXPROJ=JupyterLab
+set SPHINXPROJ=Jupyter-doc
 
 if "%1" == "" goto help
 

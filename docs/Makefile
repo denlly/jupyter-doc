@@ -3,8 +3,8 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = JupyterLab
+SPHINXBUILD   = sphinx-build
+SPHINXPROJ    = Jupyter-docs
 SOURCEDIR     = source
 BUILDDIR      = build
 

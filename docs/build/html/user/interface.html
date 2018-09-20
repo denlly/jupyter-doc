@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The JupyterLab Interface &mdash; JupyterLab 0.18.4 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="JupyterLab URLs" href="urls.html" />
+    <link rel="prev" title="JupyterLab Changelog" href="../getting_started/changelog.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> JupyterLab
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.18.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/starting.html">Starting JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/faq.html">Frequently Asked Questions (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/changelog.html">JupyterLab Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The JupyterLab Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#menu-bar">Menu Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#left-sidebar">Left Sidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-work-area">Main Work Area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tabs-and-single-document-mode">Tabs and Single-Document Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#context-menus">Context Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="urls.html">JupyterLab URLs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">Working with Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_editor.html">Text Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_console.html">Code Consoles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminal.html">Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running.html">Managing Kernels and Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Command Palette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents_kernels.html">Documents and Kernels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_formats.html">File and Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyterhub.html">JupyterLab on JupyterHub</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/repo.html">General Codebase Orientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/extension_dev.html">Extension Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/documents.html">Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/documents.html#overview-of-document-architecture">Overview of document architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/notebook.html">Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/patterns.html">Design Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/css.html">CSS Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/documentation.html">Writing Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/virtualdom.html">Virtual DOM and React</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/adding_content.html">Adding Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/xkcd_extension_tutorial.html">Let’s Make an xkcd JupyterLab Extension</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JupyterLab</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+  <li>The JupyterLab Interface</li>
+
+    
+    <li class="wy-breadcrumbs-aside">
+    
+      
+      
+        <a href="https://github.com/denlly/jupyter-doc/blob/master/docs/source/user/interface.rst" class="fa fa-github"> Edit on GitHub</a>
+      
+      
+    
+    </li>
+    <li class="wy-breadcrumbs-aside">
+      <a href="https://jupyter.org/documentation">
+        <img src="../_static/jupyter_logo.svg"></img>
+        Jupyter
+      </a>
+      &vert;
+      &nbsp;
+    </li>
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-jupyterlab-interface">
+<span id="interface"></span><h1>The JupyterLab Interface<a class="headerlink" href="#the-jupyterlab-interface" title="Permalink to this headline">¶</a></h1>
+<p>JupyterLab provides flexible building blocks for interactive,
+exploratory computing. While JupyterLab has many features found in
+traditional integrated development environments (IDEs), it remains
+focused on interactive, exploratory computing.</p>
+<p>The JupyterLab interface consists of a <a class="reference internal" href="#main-area"><span class="std std-ref">main work area</span></a>
+containing tabs of documents and activities, a collapsible <a class="reference internal" href="#left-sidebar"><span class="std std-ref">left sidebar</span></a>, and a <a class="reference internal" href="#menu-bar"><span class="std std-ref">menu bar</span></a>. The left sidebar contains a
+<a class="reference internal" href="files.html#working-with-files"><span class="std std-ref">file browser</span></a>, the <a class="reference internal" href="running.html#running"><span class="std std-ref">list of running kernels and
+terminals</span></a>, the <a class="reference internal" href="commands.html#commands"><span class="std std-ref">command palette</span></a>, the <a class="reference internal" href="notebook.html#notebook"><span class="std std-ref">notebook
+cell tools inspector</span></a>, and the <a class="reference internal" href="#tabs"><span class="std std-ref">tabs list</span></a>.</p>
+<img alt="../_images/interface_jupyterlab1.png" class="jp-screenshot align-center" src="../_images/interface_jupyterlab1.png" />
+<p>JupyterLab sessions always reside in a <a class="reference internal" href="urls.html#url-workspaces"><span class="std std-ref">workspace</span></a>.
+Workspaces contain the state of JupyterLab: the files that are currently open,
+the layout of the application areas and tabs, etc.
+Workspaces can be saved on the server with
+<a class="reference internal" href="urls.html#url-workspaces"><span class="std std-ref">named workspace URLs</span></a>.
+To learn more about URLs in Jupyterlab, visit <a class="reference internal" href="urls.html#urls"><span class="std std-ref">JupyterLab URLs</span></a>.</p>
+<div class="section" id="menu-bar">
+<span id="id1"></span><h2>Menu Bar<a class="headerlink" href="#menu-bar" title="Permalink to this headline">¶</a></h2>
+<p>The menu bar at the top of JupyterLab has top-level menus that expose
+actions available in JupyterLab with their keyboard shortcuts. The
+default menus are:</p>
+<ul class="simple">
+<li><strong>File</strong>: actions related to files and directories</li>
+<li><strong>Edit</strong>: actions related to editing documents and other activities</li>
+<li><strong>View</strong>: actions that alter the appearance of JupyterLab</li>
+<li><strong>Run</strong>: actions for running code in different activities such as
+notebooks and code consoles</li>
+<li><strong>Kernel</strong>: actions for managing kernels, which are separate processes
+for running code</li>
+<li><strong>Tabs</strong>: a list of the open documents and activities in the dock panel</li>
+<li><strong>Settings</strong>: common settings and an advanced settings editor</li>
+<li><strong>Help</strong>: a list of JupyterLab and kernel help links</li>
+</ul>
+<p><a class="reference internal" href="extensions.html#user-extensions"><span class="std std-ref">JupyterLab extensions</span></a> can also create new top-level menus in the menu
+bar.</p>
+</div>
+<div class="section" id="left-sidebar">
+<span id="id2"></span><h2>Left Sidebar<a class="headerlink" href="#left-sidebar" title="Permalink to this headline">¶</a></h2>
+<p>The left sidebar contains a number of commonly-used tabs, such as a file
+browser, a list of running kernels and terminals, the command palette,
+and a list of tabs in the main work area:</p>
+<img alt="../_images/interface_left.png" class="jp-screenshot align-center" src="../_images/interface_left.png" />
+<p id="left-sidebar-toggle">The left sidebar can be collapsed or expanded by selecting “Show Left Sidebar”
+in the View menu or by clicking on the active sidebar tab:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/PlJGecfetek?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p>JupyterLab extensions can add additional panels to the left sidebar.</p>
+</div>
+<div class="section" id="main-work-area">
+<span id="main-area"></span><h2>Main Work Area<a class="headerlink" href="#main-work-area" title="Permalink to this headline">¶</a></h2>
+<p id="main-area-vid">The main work area in JupyterLab enables you to arrange documents (notebooks,
+text files, etc.) and other activities (terminals, code consoles, etc.) into
+panels of tabs that can be resized or subdivided. Drag a tab to the center of a
+tab panel to move the tab to the panel. Subdivide a tab panel by dragging a tab to
+the left, right, top, or bottom of the panel:</p>
+<div class="jp-youtube-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/Ka8qS7CO1XQ?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p>The work area has a single current activity. The tab for the current activity is
+marked with a colored top border (blue by default).</p>
+</div>
+<div class="section" id="tabs-and-single-document-mode">
+<span id="tabs"></span><h2>Tabs and Single-Document Mode<a class="headerlink" href="#tabs-and-single-document-mode" title="Permalink to this headline">¶</a></h2>
+<p>The Tabs panel in the left sidebar lists the open documents or
+activities in the main work area:</p>
+<img alt="../_images/interface_tabs.png" class="jp-screenshot align-center" src="../_images/interface_tabs.png" />
+<p>The same information is also available in the Tabs menu:</p>
+<img alt="../_images/interface_tabs_menu.png" class="jp-screenshot align-center" src="../_images/interface_tabs_menu.png" />
+<p id="tabs-singledocument">It is often useful to focus on a single document or activity without closing
+other tabs in the main work area. Single-document mode enable this, while making
+it simple to return to your multi-activity layout in the main work area.
+Toggle single-document mode using the View menu:</p>
+<div class="jp-youtube-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/DO7NOenMQC0?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p>When you leave single-document mode, the original layout of the main
+area is restored.</p>
+</div>
+<div class="section" id="context-menus">
+<h2>Context Menus<a class="headerlink" href="#context-menus" title="Permalink to this headline">¶</a></h2>
+<p id="context-menus-rightclick">Many parts of JupyterLab, such as notebooks, text files, code consoles,
+and tabs, have context menus that can be accessed by right-clicking on
+the element:</p>
+<div class="jp-youtube-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/y30fs6kg6fc?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p id="context-menus-shiftrightclick">The browser’s native context menu can be accessed by holding down
+<code class="docutils literal notranslate"><span class="pre">Shift</span></code> and right-clicking:</p>
+<div class="jp-youtube-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/XPPWW-7WJ40?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div></div>
+<div class="section" id="keyboard-shortcuts">
+<span id="shortcuts"></span><h2>Keyboard Shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this headline">¶</a></h2>
+<p id="shortcuts-settings">As in the classic Notebook, you can navigate the user interface through keyboard
+shortcuts. You can find and customize the current list of keyboard shortcuts by
+selecting the Advanced Settings Editor item in the Settings menu, then selecting
+Keyboard Shortcuts in the Settings tab.</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/rhW3kAExCik?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div><p id="editor-keymaps">You can also customize the <a class="reference internal" href="file_editor.html#file-editor"><span class="std std-ref">text editor</span></a> to use vim, emacs, or Sublime Text
+keyboard maps by using the Text Editor Key Map submenu in the Settings
+menu:</p>
+<div class="jp-youtube-video">
+   <iframe src="https://www.youtube-nocookie.com/embed/COheO7sA4-U?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="urls.html" class="btn btn-neutral float-right" title="JupyterLab URLs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../getting_started/changelog.html" class="btn btn-neutral" title="JupyterLab Changelog" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Project Jupyter.<br/>
+        The Jupyter Trademark is registered with the U.S. Patent &amp Trademark Office.
+        
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.18.4',
+            LANGUAGE:'zh-cn',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
