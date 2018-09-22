@@ -3,42 +3,32 @@
 JupyterLab on JupyterHub
 ------------------------
 
-JupyterLab works out of the box with JupyterHub, and can even run side by side
-with the classic Notebook.
+JupyterLab与JupyterHub一起开箱即用，甚至可以与经典Notebook并排运行。
 
-Use JupyterLab by Default
+默认情况下使用JupyterLab
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you install JupyterLab on a system running JupyterHub, it will immediately be
-available at the ``/lab`` URL, but users will still be directed to the classic
-Notebook (``/tree``) by default. To change the user's default user interface to
-JupyterLab, set the following configuration option in your
+如果在运行JupyterHub的系统上安装JupyterLab，它将立即在 ``/lab`` URL上可用，但默认情况下用户仍将被定向到经典Notebook（``/tree``）。 要将用户的默认用户界面更改为JupyterLab，请在jupyterhub_config.py文件中设置以下配置选项：
 :file:`jupyterhub_config.py` file::
 
     c.Spawner.default_url = '/lab'
 
-In this configuration, users can still access the classic Notebook at ``/tree``,
-by either typing that URL into the browser, or by using the "Launch Classic
-Notebook" item in JupyterLab's Help menu.
+在此配置中，用户仍然可以在``/tree``访问经典Notebook，方法是在浏览器中键入该URL，或者使用JupyterLab的“帮助”菜单中的 “Launch Classic Notebook” 项。
 
-Further Integration
+进一步整合
 ~~~~~~~~~~~~~~~~~~~
 
-Additional integration between JupyterLab and JupyterHub is offered by the
-`jupyterlab-hub <https://github.com/jupyterhub/jupyterlab-hub>`__ extension for
-JupyterLab. It provides a Hub menu with items to access the JupyterHub control
-panel or logout of the hub.
+JupyterLab和JupyterHub之间的额外集成由JupyterLab的 `jupyterlab-hub <https://github.com/jupyterhub/jupyterlab-hub>`__ 扩展提供。 它提供了一个Hub菜单，其中包含访问JupyterHub控制面板或注销集线器的项目。
 
-To install the ``jupyterlab-hub`` extension, run::
+安装 ``jupyterlab-hub`` extension, 执行::
 
     jupyter labextension install @jupyterlab/hub-extension
 
-Further directions are provided on the `jupyterlab-hub GitHub repository
-<https://github.com/jupyterhub/jupyterlab-hub>`__.
+`jupyterlab-hub GitHub repository
+<https://github.com/jupyterhub/jupyterlab-hub>`__ 存储库提供了进一步的说明。
 
-Example Configuration
+示例配置
 ~~~~~~~~~~~~~~~~~~~~~
 
-For a fully-configured example of using JupyterLab with JupyterHub, see
-the `jupyterhub-deploy-teaching
-<https://github.com/jupyterhub/jupyterhub-deploy-teaching>`__ repository.
+有关将JupyterLab与JupyterHub一起使用的完整配置示例，请参阅`jupyterhub-deploy-teaching
+<https://github.com/jupyterhub/jupyterhub-deploy-teaching>`__ 存储库。

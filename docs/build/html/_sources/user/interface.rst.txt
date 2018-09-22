@@ -1,63 +1,42 @@
 .. _interface:
 
-The JupyterLab Interface
+JupyterLab API
 ------------------------
 
-JupyterLab provides flexible building blocks for interactive,
-exploratory computing. While JupyterLab has many features found in
-traditional integrated development environments (IDEs), it remains
-focused on interactive, exploratory computing.
+JupyterLab为交互式探索性计算提供灵活的构建块。虽然JupyterLab具有传统集成开发环境（IDE）中的许多功能，但它仍然专注于交互式探索性计算。
 
-The JupyterLab interface consists of a :ref:`main work area <main-area>`
-containing tabs of documents and activities, a collapsible :ref:`left sidebar
-<left-sidebar>`, and a :ref:`menu bar <menu-bar>`. The left sidebar contains a
-:ref:`file browser <working-with-files>`, the :ref:`list of running kernels and
-terminals <running>`, the :ref:`command palette <commands>`, the :ref:`notebook
-cell tools inspector <notebook>`, and the :ref:`tabs list <tabs>`.
+JupyterLab界面包含一个 :ref:`主工作区 <main-area>` ，包含文档和活动选项卡，可折叠 :ref:`左侧边栏 <left-sidebar>` 和 :ref:`菜单栏 <menu-bar>`。 左侧边栏包含 :ref:`文件浏览器 <working-with-files>` ，正在运行的 :ref:`内核和终端列表 <running>` ，:ref:`命令选项板<commands>` ， :ref:`笔记本单元工具检查器 <notebook>` 和 :ref:`选项卡列表 <tabs>` 。
 
 .. image:: images/interface_jupyterlab.png
    :align: center
    :class: jp-screenshot
 
-JupyterLab sessions always reside in a :ref:`workspace <url-workspaces>`.
-Workspaces contain the state of JupyterLab: the files that are currently open,
-the layout of the application areas and tabs, etc.
-Workspaces can be saved on the server with
-:ref:`named workspace URLs <url-workspaces>`.
-To learn more about URLs in Jupyterlab, visit :ref:`urls`.
-
+JupyterLab 会话始终驻留在 :ref:`工作空间中 <url-workspaces>`。 工作区包含JupyterLab的状态：当前打开的文件，应用程序区域和选项卡的布局等。工作区可以使用命名工作区URL保存在服务器上。 要了解有关Jupyterlab中URL的更多信息，请访问 :ref:`urls`。
 
 .. _menu-bar:
 
-Menu Bar
+菜单栏
 ~~~~~~~~
 
-The menu bar at the top of JupyterLab has top-level menus that expose
-actions available in JupyterLab with their keyboard shortcuts. The
-default menus are:
+JupyterLab顶部的菜单栏有一个顶级菜单，允许您通过键盘快捷键显示 JupyterLab 中可用的操作。 默认菜单是：
 
--  **File**: actions related to files and directories
--  **Edit**: actions related to editing documents and other activities
--  **View**: actions that alter the appearance of JupyterLab
--  **Run**: actions for running code in different activities such as
-   notebooks and code consoles
--  **Kernel**: actions for managing kernels, which are separate processes
-   for running code
--  **Tabs**: a list of the open documents and activities in the dock panel
--  **Settings**: common settings and an advanced settings editor
--  **Help**: a list of JupyterLab and kernel help links
+-  **File**: 与文件和目录相关的操作
+-  **Edit**: 与编辑文件和其他活动有关的行动
+-  **View**: 改变 JupyterLab 外观的动作
+-  **Run**: 用于在不同活动中运行代码的操作，例如 notebooks 和 consoles
+-  **Kernel**: 用于管理内核的操作，内核是用于运行代码的单独进程
+-  **Tabs**: 停靠面板中的打开文档和活动列表
+-  **Settings**: 常用设置和高级设置编辑器
+-  **Help**: JupyterLab 和内核帮助链接列表
 
-:ref:`JupyterLab extensions <user_extensions>` can also create new top-level menus in the menu
-bar.
+:ref:`JupyterLab extensions <user_extensions>` 还可以在菜单栏中创建新的顶级菜单.
 
 .. _left-sidebar:
 
-Left Sidebar
+左侧边栏
 ~~~~~~~~~~~~
 
-The left sidebar contains a number of commonly-used tabs, such as a file
-browser, a list of running kernels and terminals, the command palette,
-and a list of tabs in the main work area:
+左侧边栏包含许多常用选项卡，例如文件浏览器，正在运行的内核和终端列表，命令选项板以及主工作区中的选项卡列表：
 
 .. image:: images/interface_left.png
    :align: center
@@ -65,8 +44,7 @@ and a list of tabs in the main work area:
 
 .. _left-sidebar-toggle:
 
-The left sidebar can be collapsed or expanded by selecting "Show Left Sidebar"
-in the View menu or by clicking on the active sidebar tab:
+通过在“视图”菜单中选择“显示左侧边栏”或单击活动侧边栏选项卡，可以折叠或展开左侧边栏：
 
 
 .. raw:: html
@@ -75,20 +53,16 @@ in the View menu or by clicking on the active sidebar tab:
      <iframe src="https://www.youtube-nocookie.com/embed/PlJGecfetek?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
-JupyterLab extensions can add additional panels to the left sidebar.
+JupyterLab 扩展可以向左侧边栏添加其他面板。
 
 .. _main-area:
 
-Main Work Area
+主工作区
 ~~~~~~~~~~~~~~
 
 .. _main-area-vid:
 
-The main work area in JupyterLab enables you to arrange documents (notebooks,
-text files, etc.) and other activities (terminals, code consoles, etc.) into
-panels of tabs that can be resized or subdivided. Drag a tab to the center of a
-tab panel to move the tab to the panel. Subdivide a tab panel by dragging a tab to
-the left, right, top, or bottom of the panel:
+JupyterLab中的 主工作区 使您可以将文档（notebooks，文本文件等）和其他活动（terminals，code consoles等）排列到可以调整大小或细分的选项卡面板中。 将选项卡拖动到选项卡面板的中心可将选项卡移动到面板。 通过将选项卡拖动到面板的左侧，右侧，顶部或底部来细分选项卡面板：
 
 .. raw:: html
 
@@ -96,22 +70,20 @@ the left, right, top, or bottom of the panel:
     <iframe src="https://www.youtube-nocookie.com/embed/Ka8qS7CO1XQ?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
-The work area has a single current activity. The tab for the current activity is
-marked with a colored top border (blue by default).
+工作区域只有一个当前活动。 当前活动的选项卡标有彩色顶部边框（默认为蓝色）。
 
 .. _tabs:
 
-Tabs and Single-Document Mode
+标签和单文档模式
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Tabs panel in the left sidebar lists the open documents or
-activities in the main work area:
+左侧栏中的“选项卡”面板列出了主要工作区中的打开文档或活动：
 
 .. image:: images/interface_tabs.png
    :align: center
    :class: jp-screenshot
 
-The same information is also available in the Tabs menu:
+选项卡菜单中也提供了相同的信息：
 
 .. image:: images/interface_tabs_menu.png
    :align: center
@@ -119,10 +91,7 @@ The same information is also available in the Tabs menu:
 
 .. _tabs-singledocument:
 
-It is often useful to focus on a single document or activity without closing
-other tabs in the main work area. Single-document mode enable this, while making
-it simple to return to your multi-activity layout in the main work area.
-Toggle single-document mode using the View menu:
+在不关闭主工作区域中的其他选项卡的情况下，关注单个文档或活动通常很有用。 单文档模式启用此功能，同时可以轻松返回主工作区中的多活动布局。 使用“视图”菜单切换单文档模式：
 
 .. raw:: html
 
@@ -130,17 +99,14 @@ Toggle single-document mode using the View menu:
     <iframe src="https://www.youtube-nocookie.com/embed/DO7NOenMQC0?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
-When you leave single-document mode, the original layout of the main
-area is restored.
+离开单文档模式时，将恢复主区域的原始布局。
 
-Context Menus
+上下文菜单
 ~~~~~~~~~~~~~
 
 .. _context-menus-rightclick:
 
-Many parts of JupyterLab, such as notebooks, text files, code consoles,
-and tabs, have context menus that can be accessed by right-clicking on
-the element:
+JupyterLab 的许多部分（例如 notebooks，文本文件，code consoles 和选项卡）都有上下文菜单，可以通过右键单击元素来访问它们：
 
 .. raw:: html
 
@@ -150,8 +116,7 @@ the element:
 
 .. _context-menus-shiftrightclick:
 
-The browser’s native context menu can be accessed by holding down
-``Shift`` and right-clicking:
+可以通过按住``Shift`` 和右键单击来访问浏览器的本机上下文菜单：:
 
 .. raw:: html
 
@@ -161,15 +126,12 @@ The browser’s native context menu can be accessed by holding down
 
 .. _shortcuts:
 
-Keyboard Shortcuts
+键盘快捷键
 ~~~~~~~~~~~~~~~~~~
 
 .. _shortcuts-settings:
 
-As in the classic Notebook, you can navigate the user interface through keyboard
-shortcuts. You can find and customize the current list of keyboard shortcuts by
-selecting the Advanced Settings Editor item in the Settings menu, then selecting
-Keyboard Shortcuts in the Settings tab.
+与经典 Notebook 一样，您可以通过键盘快捷键导航用户界面。 您可以通过选择“设置”菜单中的“高级设置编辑器”项，然后在“设置”选项卡中选择“键盘快捷键”来查找和自定义当前键盘快捷键列表。
 
 .. raw:: html
 
@@ -179,9 +141,7 @@ Keyboard Shortcuts in the Settings tab.
 
 .. _editor-keymaps:
 
-You can also customize the :ref:`text editor <file-editor>` to use vim, emacs, or Sublime Text
-keyboard maps by using the Text Editor Key Map submenu in the Settings
-menu:
+您还可以使用“设置”菜单中的“:ref:` 文本编辑器<file-editor>` 键映射”子菜单自定义文本编辑器以使用vim，emacs或Sublime Text键盘映射：
 
 .. raw:: html
 

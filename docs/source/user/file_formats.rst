@@ -1,70 +1,55 @@
 .. _file-and-output-formats:
 
-File and Output Formats
+文件和输出格式
 -----------------------
 
-JupyterLab provides a unified architecture for viewing and editing data
-in a wide variety of formats. This model applies whether the data is in
-a file or is provided by a kernel as rich cell output in a notebook or
-code console.
+JupyterLab提供统一的体系结构，用于以各种格式查看和编辑数据。 无论数据是在文件中还是由内核提供为笔记本或代码控制台中的富单元输出，此模型都适用。
 
-For files, the data format is detected by the extension of the file (or
-the whole filename if there is no extension). A single file extension
-may have multiple editors or viewers registered. For example, a Markdown
-file (``.md``) can be edited in the file editor or rendered and
-displayed as HTML. You can open different editors and viewers for a file
-by right-clicking on the filename in the file browser and using the
-“Open With” submenu:
+对于文件，数据格式由文件的扩展名检测（如果没有扩展名，则检测整个文件名）。 单个文件扩展名可能会注册多个编辑者或查看者。 例如，Markdown文件（``.md``）可以在文件编辑器中编辑，也可以呈现为HTML格式。 您可以通过右键单击文件浏览器中的文件名并使用“Open With”子菜单打开文件的不同编辑器和查看器：
 
 .. image:: images/file_formats_open_with.png
    :align: center
    :class: jp-screenshot
 
-To use these different data formats as output in a notebook or code
-console, you can use the relevant display API for the kernel you are
-using. For example, the IPython kernel provides a variety of convenience
-classes for displaying rich output:
+要在笔记本电脑或代码控制台中使用这些不同的数据格式作为输出，您可以使用您正在使用的内核的相关显示API。 例如，IPython内核提供了各种便利类来显示丰富的输出：
 
 .. code:: python
 
     from IPython.display import display, HTML
     display(HTML('<h1>Hello World</h1>'))
 
-Running this code will display the HTML in the output of a notebook or
-code console cell:
+运行此代码将在笔记本或代码控制台单元格的输出中显示HTML：
 
 .. image:: images/file_formats_html_display.png
    :align: center
    :class: jp-screenshot
 
-The IPython display function can also construct a raw rich output
-message from a dictionary of keys (MIME types) and values (MIME data):
+IPython显示功能还可以从密钥字典（MIME类型）和值（MIME数据）构造原始丰富输出消息：
 
 .. code:: python
 
     from IPython.display import display
     display({'text/html': '<h1>Hello World</h1>', 'text/plain': 'Hello World'}, raw=True)
 
-Other Jupyter kernels offer similar APIs.
+其他Jupyter内核提供类似的API。
 
-The rest of this section highlights some of the common data formats that
-JupyterLab supports by default. JupyterLab extensions can also add support for
-other file formats.
+本节的其余部分将重点介绍JupyterLab默认支持的一些常见数据格式。 JupyterLab扩展还可以添加对其他文件格式的支持。
 
 .. _markdown:
 
 Markdown
 ~~~~~~~~
 
--  File extension: ``.md``
--  MIME type: ``text/markdown``
+-  文件扩展名: ``.md``
+-  MIME 类型: ``text/markdown``
 
-Markdown is a simple and popular markup language used for text cells in
-the Jupyter Notebook.
+Markdown是一种简单而流行的标记语言，用于Jupyter Notebook中的文本编辑。
+
+
 
 .. _edit-markdown:
 
-Markdown documents can be edited as text files or rendered inline:
+Markdown文档可以像文本文件一样编辑，并且可以渲染后呈现：
 
 .. raw:: html
 
@@ -72,30 +57,22 @@ Markdown documents can be edited as text files or rendered inline:
     <iframe src="https://www.youtube-nocookie.com/embed/eQsRlqK-z1c?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
-The Markdown syntax supported in this mode is the same syntax used in
-the Jupyter Notebook (for example, LaTeX equations work). As seen in the
-animation, edits to the Markdown source are immediately reflected in the
-rendered version.
+此模式支持的Markdown语法与Jupyter Notebook中使用的语法相同（例如，LaTeX方程式工作）。 如动画中所示，对Markdown源的编辑会立即反映在渲染后的版本中。
 
-Images
+图片
 ~~~~~~
 
--  File extensions: ``.bmp``, ``.gif``, ``.jpeg``, ``.jpg``, ``.png``,
+-  文件扩展名: ``.bmp``, ``.gif``, ``.jpeg``, ``.jpg``, ``.png``,
    ``.svg``
--  MIME types: ``image/bmp``, ``image/gif``, ``image/jpeg``,
+-  MIME 类型: ``image/bmp``, ``image/gif``, ``image/jpeg``,
    ``image/png``, ``image/svg+xml``
 
-JupyterLab supports image data in cell output and as files in the above
-formats. In the image file viewer, you can use keyboard shortcuts such
-as ``+`` and ``-`` to zoom the image, ``[`` and ``]`` to rotate the image,
-and ``H`` and ``V`` to flip the image horizontally and vertically. Use
-``I`` to invert the colors, and use ``0`` to reset the image.
+JupyterLab支持单元格输出图像数据以及上述格式的文件。 在图像文件查看器中，您可以使用键盘快捷键（如``+``和 ``-`` ）来缩放图像，``[``和``]`` 旋转图像，使用``H``和``V``来水平和垂直翻转图像。 使用``I``反转颜色，并使用``0``重置图像。
+
 
 .. _edit-svg:
 
-To edit an SVG image as a text file, right-click on the SVG filename in
-the file browser and select the “Editor” item in the “Open With”
-submenu:
+要将SVG图像编辑为文本文件，请在文件浏览器中右键单击SVG文件名，然后在“Open With”子菜单中选择“Editor”项：
 
 .. raw:: html
 
@@ -105,7 +82,7 @@ submenu:
 
 .. _csv:
 
-Delimiter-separated Values
+分隔符分隔值
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  File extension: ``.csv``
@@ -113,10 +90,7 @@ Delimiter-separated Values
 
 .. _view-csv:
 
-Files with rows of delimiter-separated values, such as CSV files, are a common format for
-tabular data. The default viewer for these files in JupyterLab is a
-high-performance data grid viewer which can display comma-separated, tab-separated, and
-semicolon-separated values:
+具有分隔符分隔行的文件（如CSV文件）是表格数据的常用格式。 JupyterLab中这些文件的默认查看器是一个高性能数据网格查看器，它可以显示以逗号分隔，制表符分隔和分号分隔的值：
 
 .. raw:: html
 
@@ -124,13 +98,11 @@ semicolon-separated values:
     <iframe src="https://www.youtube-nocookie.com/embed/z6xuZ9H3Imo?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
-While tab-separated value files can be read by the grid viewer, it currently does not automatically recognize ``.tsv`` files.
-To view, you must change the extension to ``.csv`` and set the delimiter to tabs.
+虽然可以通过网格查看器读取制表符分隔行文件，但它当前不会自动识别 ``.tsv`` 文件。 要查看，您必须将扩展名更改为 ``.csv`` 并将分隔符设置为选项卡。
 
 .. _edit-csv:
 
-To edit a CSV file as a text file, right-click on the file in the file
-browser and select the “Editor” item in the “Open With” submenu:
+要将CSV文件编辑为文本文件，请在文件浏览器中右键单击该文件，然后在“Open With”子菜单中选择“Editor”项：
 
 .. raw:: html
 
@@ -138,8 +110,7 @@ browser and select the “Editor” item in the “Open With” submenu:
     <iframe src="https://www.youtube-nocookie.com/embed/b5oAoVB3Wd4?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
-JupyterLab's grid viewer can open large files, up to the maximum string size of the particular browser.
-Below is a table that shows the sizes of the largest test files we successfully opened in each browser we support:
+JupyterLab的网格查看器可以打开大文件，最大可达特定浏览器的字符串大小。 下面的表格显示了我们在每个支持的浏览器中成功打开的最大测试文件的大小：
 
 +---------+----------+
 | Browser | Max Size |
@@ -151,7 +122,7 @@ Below is a table that shows the sizes of the largest test files we successfully 
 | Safari  |  1.8GB   |
 +---------+----------+
 
-The actual maximum size of files that can be successfully loaded will vary depending on the browser version and file content.
+可以成功加载的文件的实际最大大小将根据浏览器版本和文件内容而有所不同。
 
 JSON
 ~~~~
@@ -161,9 +132,7 @@ JSON
 
 .. _view-json:
 
-JavaScript Object Notation (JSON) files are common in data science.
-JupyterLab supports displaying JSON data in cell output or viewing a
-JSON file using a searchable tree view:
+JavaScript Object Notation（JSON）文件在数据科学的实践中很常见。 JupyterLab支持在单元格输出中显示JSON数据或使用树视图查看JSON文件：
 
 .. raw:: html
 
@@ -173,8 +142,7 @@ JSON file using a searchable tree view:
 
 .. _edit-json:
 
-To edit the JSON as a text file, right-click on the filename in the file
-browser and select the “Editor” item in the “Open With” submenu:
+要将JSON编辑为文本文件，请在文件浏览器中右键单击文件名，然后在“Open With”子菜单中选择“Editor”项：
 
 .. raw:: html
 
@@ -188,8 +156,7 @@ HTML
 -  File extension: ``.html``
 -  MIME type: ``text/html``
 
-JupyterLab supports rendering HTML in cell output and editing HTML files
-as text in the file editor.
+JupyterLab支持在单元格输出中呈现HTML，并在文件编辑器中将HTML文件编辑为文本。
 
 LaTeX
 ~~~~~
@@ -197,8 +164,7 @@ LaTeX
 -  File extension: ``.tex``
 -  MIME type: ``text/latex``
 
-JupyterLab supports rendering LaTeX equations in cell output and editing
-LaTeX files as text in the file editor.
+JupyterLab支持在单元格输出LaTeX方程，并在文件编辑器中将LaTeX文件编辑为文本。
 
 PDF
 ~~~
@@ -208,8 +174,7 @@ PDF
 
 .. _view-pdf:
 
-PDF is a common standard file format for documents. To view a PDF file
-in JupyterLab, double-click on the file in the file browser:
+PDF是文档的通用标准文件格式。 要在JupyterLab中查看PDF文件，请在文件浏览器中双击该文件：
 
 .. raw:: html
 
@@ -232,15 +197,11 @@ Vega-Lite:
 -  File extensions: ``.vl``, ``.vl.json``
 -  MIME type: ``application/vnd.vegalite.v1+json``
 
-Vega and Vega-Lite are declarative visualization grammars that enable
-visualizations to be encoded as JSON data. For more information, see the
-documentation of Vega or Vega-Lite. JupyterLab supports rendering Vega
-2.x and Vega-Lite 1.x data in files and cell output.
+Vega和Vega-Lite是声明性可视化语法，可以将可视化编码为JSON数据。 有关更多信息，请参阅Vega或Vega-Lite的文档。 JupyterLab支持在文件和单元格输出Vega 2.x和Vega-Lite 1.x数据。
 
 .. _open-vega:
 
-Vega-Lite 1.x files, with a ``.vl`` or ``.vl.json`` file extension, can
-be opened by double-clicking the file in the file browser:
+可以通过双击文件浏览器中的文件来打开具有 ``.vl`` 或 ``.vl.json`` 文件扩展名的Vega-Lite 1.x文件：
 
 .. raw:: html
 
@@ -250,8 +211,7 @@ be opened by double-clicking the file in the file browser:
 
 .. _open-vega-with:
 
-The files can also be opened in the JSON viewer or file editor through
-the “Open With…” submenu in the file browser content menu:
+也可以通过文件浏览器内容菜单中的“Open With…”子菜单在JSON查看器或文件编辑器中打开文件：
 
 .. raw:: html
 
@@ -261,9 +221,7 @@ the “Open With…” submenu in the file browser content menu:
 
 .. _vega-multiple-views:
 
-As with other files in JupyterLab, multiple views of a single file
-remain synchronized, enabling you to interactively edit and render
-Vega/Vega-Lite visualizations:
+与JupyterLab中的其他文件一样，单个文件的多个视图保持同步，使您能够以交互方式编辑和渲染Vega / Vega-Lite可视化数据：
 
 .. raw:: html
 
@@ -272,19 +230,15 @@ Vega/Vega-Lite visualizations:
   </div>
 
 
-The same workflow also works for Vega 2.x files, with a ``.vg`` or
-``.vg.json`` file extension.
+相同的工作流程也适用于Vega 2.x文件，文件扩展名为 ``.vg`` 或 ``.vg.json``。
 
-Output support for Vega/Vega-Lite in a notebook or code console is
-provided through third-party libraries such as Altair (Python), the
-vegalite R package, or Vegas (Scala/Spark).
+笔记本电脑或代码控制台中Vega / Vega-Lite的输出支持是通过第三方库提供的，例如Altair（Python），vegalite R软件包或Vegas（Scala / Spark）。
 
 .. image:: images/file_formats_altair.png
    :align: center
    :class: jp-screenshot
 
-A JupyterLab extension that supports Vega 3.x and Vega-Lite 2.x can be
-found `here <https://github.com/jupyterlab/jupyter-renderers>`__.
+可在 `此处 <https://github.com/jupyterlab/jupyter-renderers>`__ 找到支持Vega 3.x和Vega-Lite 2.x的JupyterLab扩展。
 
 Virtual DOM
 ~~~~~~~~~~~
@@ -292,18 +246,12 @@ Virtual DOM
 -  File extensions: ``.vdom``, ``.json``
 -  MIME type: ``application/vdom.v1+json``
 
-Virtual DOM libraries such as `react.js <https://reactjs.org/>`__ have
-greatly improved the experience of rendering interactive content in
-HTML. The nteract project, which collaborates closely with Project
-Jupyter, has created a `declarative JSON
-format <https://github.com/nteract/vdom>`__ for virtual DOM data.
-JupyterLab can render this data using react.js. This works for both VDOM
-files with the ``.vdom`` extension, or within notebook output.
+诸如 `react.js <https://reactjs.org/>`__  之类的虚拟DOM库极大地改善了在HTML中呈现交互式内容的体验。 nteract项目与Project Jupyter密切合作，为虚拟DOM数据创建了一个 `声明性JSON格式 <https://github.com/nteract/vdom>`__ 。 JupyterLab可以使用react.js呈现此数据。 这适用于扩展名为 ``.vdom`` 的VDOM文件或笔记本输出中的VDOM文件。
+
 
 .. _edit-vdom:
 
-Here is an example of a ``.vdom`` file being edited and rendered
-interactively:
+以下是以交互方式编辑和呈现的 ``.vdom`` 文件的示例：
 
 .. raw:: html
 
@@ -311,9 +259,9 @@ interactively:
     <iframe src="https://www.youtube-nocookie.com/embed/fObR8xeKCJU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
-The `nteract/vdom <https://github.com/nteract/vdom>`__ library provides
-a Python API for creating VDOM output that is rendered in nteract and
-JupyterLab:
+
+The `nteract/vdom <https://github.com/nteract/vdom>`__ 库提供了一个Python API，用于创建在nteract和JupyterLab中呈现的VDOM输出：
+
 
 .. image:: images/file_formats_nteract_vdom.png
    :align: center

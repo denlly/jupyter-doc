@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Text Editor" href="file_editor.html" />
+    <link rel="next" title="文本编辑器" href="file_editor.html" />
     <link rel="prev" title="JupyterLab URLs" href="urls.html" /> 
 
   
@@ -92,15 +92,15 @@
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="interface.html">The JupyterLab Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">JupyterLab API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="urls.html">JupyterLab URLs</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Working with Files</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#opening-files">Opening Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-files-and-activities">Creating Files and Activities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#uploading-and-downloading">Uploading and Downloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">打开文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">创建文件和活动</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">上传和下载</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="file_editor.html">Text Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_editor.html">文本编辑器</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebook.html">Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_console.html">Code Consoles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terminal.html">Terminals</a></li>
@@ -202,73 +202,52 @@
             
   <div class="section" id="working-with-files">
 <span id="id1"></span><h1>Working with Files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="opening-files">
-<h2>Opening Files<a class="headerlink" href="#opening-files" title="Permalink to this headline">¶</a></h2>
-<p>The file browser and File menu enable you to work with files and
-directories on your system. This includes opening, creating, deleting,
-renaming, downloading, copying, and sharing files and directories.</p>
-<p>The file browser is in the left sidebar Files tab:</p>
+<div class="section" id="id2">
+<h2>打开文件<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>使用文件浏览器和“文件”菜单可以处理系统上的文件和目录。 这包括打开，创建，删除，重命名，下载，复制和共享文件和目录。</p>
+<p>文件浏览器位于左侧边栏“文件”选项卡中：</p>
 <img alt="../_images/file_menu_left.png" class="jp-screenshot align-center" src="../_images/file_menu_left.png" />
-<p>Many actions on files can also be carried out in the File menu:</p>
+<p>对文件的许多操作也可以在“文件”菜单中执行：</p>
 <img alt="../_images/file_menu_top.png" class="jp-screenshot align-center" src="../_images/file_menu_top.png" />
-<p id="open-file">To open any file, double-click on its name in the file browser:</p>
+<p id="open-file">要打开任何文件，请在文件浏览器中双击其名称：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/Rh-vwjTwBTI?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div><p id="newtab">You can also drag a file into the main work area to create a new tab:</p>
+</div><p id="newtab">你还可以将文件拖到主工作区中以创建新选项卡：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/uwMmHeDmRxk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div><p id="multiple-viewers">Many files types have <a class="reference internal" href="file_formats.html#file-and-output-formats"><span class="std std-ref">multiple viewers/editors</span></a>.
-For example, you can open a Markdown file in a <a class="reference internal" href="file_editor.html#file-editor"><span class="std std-ref">text editor</span></a> or as rendered HTML.
-A JupyterLab extension can also add new viewers/editors for files.
-To open a file in a non-default viewer/editor, right-click on its name in the
-file browser and use the “Open With…” submenu to select the viewer/editor:</p>
+</div><p id="multiple-viewers">许多文件类型都有:ref:<cite>多个视图/编辑器 &lt;file-and-output-formats&gt;</cite>。 例如，您可以在 <a class="reference internal" href="file_editor.html#file-editor"><span class="std std-ref">文本编辑器</span></a> 中打开Markdown文件，也可以将其作为呈现的HTML打开。 JupyterLab 扩展还可以为文件添加新的查看器/编辑器。 要在非默认查看器/编辑器中打开文件，请在文件浏览器中右键单击其名称，然后使用“Open With…”子菜单选择查看器/编辑器：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/1kEgUqAeYo0?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div><p id="single-doc-sync">A single file can be open simultaneously in multiple viewer/editors and
-they will remain in sync:</p>
+</div><p id="single-doc-sync">可以在多个查看器/编辑器中同时打开单个文件，它们将保持同步：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/87ALbxm1Y3I?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div><p id="file-navigation">The file system can be navigated by double-clicking on folders in the
-listing or clicking on the folders at the top of the directory listing:</p>
+</div><p id="file-navigation">可以通过双击列表中的文件夹或单击目录列表顶部的文件夹来导航文件系统：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/2OHwJzjG-l4?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div><p id="file-share">Right-click on a file or directory and select “Copy Shareable Link” to
-copy a URL that can be used to open JupyterLab with that file or
-directory open.</p>
+</div><p id="file-share">右键单击文件或目录，然后选择“Copy Shareable Link”以复制可用于打开JupyterLab的URL，并打开该文件或目录。</p>
 <img alt="../_images/shareable_link.png" class="jp-screenshot align-center" src="../_images/shareable_link.png" />
-<p id="file-copy-path">Right-click on a file or directory and select “Copy Path” to copy the
-filesystem relative path. This can be used for passing arguments to open
-files in functions called in various kernels.</p>
+<p id="file-copy-path">右键单击文件或目录，然后选择“Copy Path”以复制文件系统相对路径。 这可以用于将参数传递给各种内核中调用的函数中的打开文件。</p>
 </div>
-<div class="section" id="creating-files-and-activities">
-<h2>Creating Files and Activities<a class="headerlink" href="#creating-files-and-activities" title="Permalink to this headline">¶</a></h2>
-<p id="file-create-plus">Create new files or activities by clicking the <code class="docutils literal notranslate"><span class="pre">+</span></code> button at the top
-of the file browser. This will open a new Launcher tab in the main work area,
-which enables you to pick an activity and kernel:</p>
+<div class="section" id="id3">
+<h2>创建文件和活动<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p id="file-create-plus">单击文件浏览器顶部的 <code class="docutils literal notranslate"><span class="pre">+</span></code> 按钮创建新文件或活动。 这将在主工作区中打开一个新的Launcher选项卡，使您可以选择一个活动和内核：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/QL0IxDAOEc0?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div><p id="file-create-menu">You can also create new documents or activities using the File menu:</p>
+</div><p id="file-create-menu">您还可以使用“文件”菜单创建新文档或活动：</p>
 <img alt="../_images/file_create_text_file.png" class="jp-screenshot align-center" src="../_images/file_create_text_file.png" />
-<p id="current-directory">The current working directory of a new activity or document will be the
-directory listed in the file browser (except for a terminal, which
-always starts in the root directory of the file browser):</p>
+<p id="current-directory">新活动或文档的当前工作目录将是文件浏览器中列出的目录（Terminal除外，它始终在文件浏览器的根目录中启动）：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/OfISSOTiGTY?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div><p id="file-rename">A new file is created with a default name. Rename a file by
-right-clicking on its name in the file browser and selecting “Rename”
-from the context menu:</p>
+</div><p id="file-rename">使用默认名称创建新文件。 通过在文件浏览器中右键单击其名称并从上下文菜单中选择 “Rename” 来重命名文件：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/y3xzXelypjs?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div></div>
-<div class="section" id="uploading-and-downloading">
-<h2>Uploading and Downloading<a class="headerlink" href="#uploading-and-downloading" title="Permalink to this headline">¶</a></h2>
-<p id="file-upload">Files can be uploaded to the current directory of the file browser by
-dragging and dropping files onto the file browser, or by clicking the
-“Upload Files” button at the top of the file browser:</p>
+<div class="section" id="id4">
+<h2>上传和下载<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p id="file-upload">通过将文件拖放到文件浏览器上，或者通过单击文件浏览器顶部的“Upload Files”按钮，可以将文件上载到文件浏览器的当前目录：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/1bd2QHqQSH4?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div><p id="file-download">Any file in JupyterLab can be downloaded by right-clicking its name in
-the file browser and selecting “Download” from the context menu:</p>
+</div><p id="file-download">可以通过在文件浏览器中右键单击其名称并从上下文菜单中选择“Download”来下载JupyterLab中的任何文件：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/Wl7Ozl6rMcc?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div></div>
@@ -282,7 +261,7 @@ the file browser and selecting “Download” from the context menu:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="file_editor.html" class="btn btn-neutral float-right" title="Text Editor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="file_editor.html" class="btn btn-neutral float-right" title="文本编辑器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="urls.html" class="btn btn-neutral" title="JupyterLab URLs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

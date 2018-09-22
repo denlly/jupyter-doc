@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Working with Files" href="files.html" />
-    <link rel="prev" title="The JupyterLab Interface" href="interface.html" /> 
+    <link rel="prev" title="JupyterLab API" href="interface.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -92,13 +92,13 @@
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="interface.html">The JupyterLab Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">JupyterLab API</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">JupyterLab URLs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#file-navigation-with-tree">File Navigation with <code class="docutils literal notranslate"><span class="pre">/tree</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#managing-workspaces">Managing Workspaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cloning-workspaces">Cloning Workspaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#resetting-a-workspace">Resetting a Workspace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#combining-url-functions">Combining URL Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tree">文件导航 <code class="docutils literal notranslate"><span class="pre">/tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#url-workspaces">管理工作区</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#url-clone">克隆工作区</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#url-reset">重置工作区</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#url">组合URL功能</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">Working with Files</a></li>
@@ -204,82 +204,69 @@
             
   <div class="section" id="jupyterlab-urls">
 <span id="urls"></span><h1>JupyterLab URLs<a class="headerlink" href="#jupyterlab-urls" title="Permalink to this headline">¶</a></h1>
-<p>Like the classic notebook, JupyterLab provides a way for users to copy URLs that
-open a specific notebook or file. Additionally, JupyterLab URLs are an advanced
-part of the user interface that allows for managing workspaces. These two
-functions – file paths and workspaces – can be <a class="reference internal" href="#url-combine"><span class="std std-ref">combined in URLs that open a
-specific file in a specific workspace</span></a>.</p>
-<div class="section" id="file-navigation-with-tree">
-<span id="url-tree"></span><h2>File Navigation with <code class="docutils literal notranslate"><span class="pre">/tree</span></code><a class="headerlink" href="#file-navigation-with-tree" title="Permalink to this headline">¶</a></h2>
-<p>JupyterLab’s file navigation URLs adopts
-the nomenclature of the classic notebook; these URLs are <code class="docutils literal notranslate"><span class="pre">/tree</span></code> URLs:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab/tree/path/to/notebook.ipynb
-</pre></div>
+<p>与经典笔记本一样，JupyterLab为用户提供了一种复制打开特定笔记本或文件的URL的方法。 此外，JupyterLab URLs是用户界面的高级部分，允许管理工作区。 这两个函数 - 文件路径和工作空间 - 可以 <a class="reference internal" href="#url-combine"><span class="std std-ref">组合在打开特定工作空间中特定文件的URL中</span></a>。
+.. _url-tree:</p>
+<div class="section" id="tree">
+<h2>文件导航 <code class="docutils literal notranslate"><span class="pre">/tree</span></code><a class="headerlink" href="#tree" title="Permalink to this headline">¶</a></h2>
+<p>JupyterLab的文件导航URL采用经典笔记本的命名法; 这些URL是 <code class="docutils literal notranslate"><span class="pre">/tree</span></code> URLs:
+.. code-block:: none</p>
+<blockquote>
+<div>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab/tree/path/to/notebook.ipynb</div></blockquote>
+<p>输入此URL将以 <a class="reference internal" href="interface.html#tabs"><span class="std std-ref">单文档模式</span></a> 在 JupyterLab 中打开笔记本。</p>
 </div>
-<p>Entering this URL will open the notebook in JupyterLab in
-<a class="reference internal" href="interface.html#tabs"><span class="std std-ref">single-document mode</span></a>.</p>
-</div>
-<div class="section" id="managing-workspaces">
-<span id="url-workspaces"></span><h2>Managing Workspaces<a class="headerlink" href="#managing-workspaces" title="Permalink to this headline">¶</a></h2>
-<p>JupyterLab sessions always reside in a workspace. Workspaces contain the state
-of JupyterLab: the files that are currently open, the layout of the application
-areas and tabs, etc. When the page is refreshed, the workspace is restored.</p>
-<p>The default workspace is not named and only saves its state on the
-user’s local browser:</p>
+<div class="section" id="url-workspaces">
+<span id="id1"></span><h2>管理工作区<a class="headerlink" href="#url-workspaces" title="Permalink to this headline">¶</a></h2>
+<p>JupyterLab 会话始终驻留在工作空间中。 工作区包含 JupyterLab 的状态：当前打开的文件，应用程序区域和选项卡的布局等。刷新页面时，将还原工作区。</p>
+<p>默认工作空间未命名，仅将其状态保存在用户的本地浏览器中：</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab
 </pre></div>
 </div>
-<p>Named workspaces save their state on the server and can be shared between
-multiple users (or browsers) as long as they have access to the same server:</p>
+<p>命名工作区将其状态保存在服务器上，并且可以在多个用户（或浏览器）之间共享，只要他们可以访问同一服务器：</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab/workspaces/foo
 </pre></div>
 </div>
-<p>A workspace should only be open in a single browser tab at a time. If JupyterLab
-detects that a workspace is being opened multiple times simultaneously, it will
-prompt for a new workspace name. Opening a document in two different browser
-tabs simultaneously is also not supported.</p>
+<p>工作区应该一次只能在一个浏览器选项卡中打开。 如果JupyterLab检测到同时多次打开工作空间，则会提示输入新的工作空间名称。 同时也不支持在两个不同的浏览器选项卡中打开文档。</p>
 </div>
-<div class="section" id="cloning-workspaces">
-<span id="url-clone"></span><h2>Cloning Workspaces<a class="headerlink" href="#cloning-workspaces" title="Permalink to this headline">¶</a></h2>
-<p>You can copy the contents of a workspace into another workspace with the <code class="docutils literal notranslate"><span class="pre">clone</span></code> url parameter.</p>
-<p>To copy the contents of the workspace <code class="docutils literal notranslate"><span class="pre">foo</span></code> into the workspace <code class="docutils literal notranslate"><span class="pre">bar</span></code>:</p>
+<div class="section" id="url-clone">
+<span id="id2"></span><h2>克隆工作区<a class="headerlink" href="#url-clone" title="Permalink to this headline">¶</a></h2>
+<p>您可以使用 <code class="docutils literal notranslate"><span class="pre">clone</span></code> url参数将工作空间的内容复制到另一个工作空间。</p>
+<p>要将工作区 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 的内容复制到工作区 <code class="docutils literal notranslate"><span class="pre">bar</span></code> 中：</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab/workspaces/bar?clone=foo
 </pre></div>
 </div>
-<p>To copy the contents of the default workspace into the workspace <code class="docutils literal notranslate"><span class="pre">foo</span></code>:</p>
+<p>要将默认工作空间的内容复制到工作空间 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 中：</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab/workspaces/foo?clone
 </pre></div>
 </div>
-<p>To copy the contents of the workspace <code class="docutils literal notranslate"><span class="pre">foo</span></code> into the default workspace:</p>
+<p>要将工作空间 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 的内容复制到默认工作空间：</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab?clone=foo
 </pre></div>
 </div>
 </div>
-<div class="section" id="resetting-a-workspace">
-<span id="url-reset"></span><h2>Resetting a Workspace<a class="headerlink" href="#resetting-a-workspace" title="Permalink to this headline">¶</a></h2>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">reset</span></code> url parameter to clear a workspace of its contents.</p>
-<p>To reset the contents of the workspace <code class="docutils literal notranslate"><span class="pre">foo</span></code>:</p>
+<div class="section" id="url-reset">
+<span id="id3"></span><h2>重置工作区<a class="headerlink" href="#url-reset" title="Permalink to this headline">¶</a></h2>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">reset</span></code> url参数清除其内容的工作空间。</p>
+<p>要重置工作空间 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 的内容：</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab/workspaces/foo?reset
 </pre></div>
 </div>
-<p>To reset the contents of the default workspace:</p>
+<p>要重置默认工作区的内容：</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab/workspaces/lab?reset
 </pre></div>
 </div>
 </div>
-<div class="section" id="combining-url-functions">
-<span id="url-combine"></span><h2>Combining URL Functions<a class="headerlink" href="#combining-url-functions" title="Permalink to this headline">¶</a></h2>
-<p>These URL functions can be used separately, as above, or in combination.</p>
-<p>To reset the workspace <code class="docutils literal notranslate"><span class="pre">foo</span></code> and load a specific notebook afterward:</p>
+<div class="section" id="url">
+<span id="url-combine"></span><h2>组合URL功能<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h2>
+<p>这些URL功能可以单独使用，如上所述，也可以组合使用。</p>
+<p>要重置工作区 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 并在以后加载特定 notebook：</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab/workspaces/foo/tree/path/to/notebook.ipynb?reset
 </pre></div>
 </div>
-<p>To clone the contents of the workspace <code class="docutils literal notranslate"><span class="pre">bar</span></code> into the workspace <code class="docutils literal notranslate"><span class="pre">foo</span></code> and
-load a notebook afterward:</p>
+<p>要将工作区栏的内容克隆到工作区 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 中，然后加载 notebook ：</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab/workspaces/foo/tree/path/to/notebook.ipynb?clone=bar
 </pre></div>
 </div>
-<p>To reset the contents of the default workspace and load a notebook:</p>
+<p>要重置默认工作区的内容并加载 notebook：</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http(s)://&lt;server:port&gt;/&lt;lab-location&gt;/lab/tree/path/to/notebook.ipynb?reset
 </pre></div>
 </div>
@@ -297,7 +284,7 @@ load a notebook afterward:</p>
         <a href="files.html" class="btn btn-neutral float-right" title="Working with Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="interface.html" class="btn btn-neutral" title="The JupyterLab Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="interface.html" class="btn btn-neutral" title="JupyterLab API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

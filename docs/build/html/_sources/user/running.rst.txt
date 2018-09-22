@@ -1,11 +1,9 @@
 .. _running:
 
-Managing Kernels and Terminals
+管理内核和终端
 ------------------------------
 
-The Running panel in the left sidebar shows a list of all the kernels and
-terminals currently running across all notebooks, code consoles, and
-directories:
+左侧栏中的“运行”面板显示当前在所有 notebooks ，code consoles 和文件夹中运行的所有内核和终端的列表：
 
 .. image:: images/running_layout.png
    :align: center
@@ -13,11 +11,7 @@ directories:
 
 .. _reopen-document:
 
-As with the classic Jupyter Notebook, when you close a notebook
-document, code console, or terminal, the underlying kernel or terminal
-running on the server continues to run. This enables you to perform
-long-running actions and return later. The Running panel enables you to
-re-open or focus the document linked to a given kernel or terminal:
+与经典的Jupyter Notebook一样，当您关闭笔记本文档，代码控制台或终端时，服务器上运行的底层内核或终端将继续运行。 这使您可以执行长时间运行的操作并在以后返回。 使用“运行”面板可以重新打开或聚焦链接到给定内核或终端的文档：
 
 .. raw:: html
 
@@ -27,7 +21,7 @@ re-open or focus the document linked to a given kernel or terminal:
 
 .. _shutdown-kernel:
 
-Kernels or terminals can be shut down from the Running panel:
+可以从“运行”面板关闭内核或终端：
 
 .. raw:: html
 
@@ -37,8 +31,7 @@ Kernels or terminals can be shut down from the Running panel:
 
 .. _shutdown-all-kernels:
 
-You can shut down all kernels and terminals by clicking the ``X``
-button:
+您可以通过单击 ``X`` 来关闭所有内核和终端按钮：
 
 .. raw:: html
 

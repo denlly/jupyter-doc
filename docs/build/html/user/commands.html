@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Command Palette &mdash; JupyterLab 0.18.4 documentation</title>
+  <title>命令调用板 Command Palette &mdash; JupyterLab 0.18.4 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Documents and Kernels" href="documents_kernels.html" />
-    <link rel="prev" title="Managing Kernels and Terminals" href="running.html" /> 
+    <link rel="next" title="文件和内核" href="documents_kernels.html" />
+    <link rel="prev" title="管理内核和终端" href="running.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -92,18 +92,18 @@
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="interface.html">The JupyterLab Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">JupyterLab API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="urls.html">JupyterLab URLs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">Working with Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file_editor.html">Text Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_editor.html">文本编辑器</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebook.html">Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_console.html">Code Consoles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminal.html">Terminals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="running.html">Managing Kernels and Terminals</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Palette</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documents_kernels.html">Documents and Kernels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file_formats.html">File and Output Formats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminal.html">终端（Terminals）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running.html">管理内核和终端</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">命令调用板 Command Palette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents_kernels.html">文件和内核</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_formats.html">文件和输出格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">扩展</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyterhub.html">JupyterLab on JupyterHub</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Guide</span></p>
@@ -166,7 +166,7 @@
     
   <li><a href="../index.html">Docs</a> &raquo;</li>
     
-  <li>Command Palette</li>
+  <li>命令调用板 Command Palette</li>
 
     
     <li class="wy-breadcrumbs-aside">
@@ -196,15 +196,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="command-palette">
-<span id="commands"></span><h1>Command Palette<a class="headerlink" href="#command-palette" title="Permalink to this headline">¶</a></h1>
-<p>All user actions in JupyterLab are processed through a centralized
-command system. These commands are shared and used throughout JupyterLab
-(menu bar, context menus, keyboard shortcuts, etc.). The command palette
-in the left sidebar provides a keyboard-driven way to search for and run
-JupyterLab commands:</p>
+<span id="commands"></span><h1>命令调用板 Command Palette<a class="headerlink" href="#command-palette" title="Permalink to this headline">¶</a></h1>
+<p>JupyterLab中的所有用户操作都通过集中式命令系统进行处理。 这些命令在JupyterLab中共享和使用（菜单栏，上下文菜单，键盘快捷键等）。 左侧栏中的命令选项板提供了一种键盘驱动的方式来搜索和运行JupyterLab命令：</p>
 <img alt="../_images/command_palette.png" class="jp-screenshot align-center" src="../_images/command_palette.png" />
-<p id="access-palette">The command palette can be accessed using the keyboard shortcut
-<code class="docutils literal notranslate"><span class="pre">Command/Ctrl</span> <span class="pre">Shift</span> <span class="pre">C</span></code>:</p>
+<p id="access-palette">可以使用键盘快捷键``Command/Ctrl Shift C``访问命令调用板：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/lPuj57UkxYs?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div></div>
@@ -217,10 +212,10 @@ JupyterLab commands:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="documents_kernels.html" class="btn btn-neutral float-right" title="Documents and Kernels" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="documents_kernels.html" class="btn btn-neutral float-right" title="文件和内核" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="running.html" class="btn btn-neutral" title="Managing Kernels and Terminals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="running.html" class="btn btn-neutral" title="管理内核和终端" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -3,24 +3,19 @@
 Notebooks
 ---------
 
-Jupyter notebooks are documents that combine live runnable code with
-narrative text (Markdown), equations (LaTeX), images, interactive
-visualizations and other rich output:
+Jupyter notebooks 是将实时可运行代码与描述文本（Markdown），方程式（LaTeX），images，交互式可视化和其他丰富输出相结合的文档：
 
 .. image:: images/notebook/notebook_ui.png
    :align: center
    :class: jp-screenshot
 
-**Jupyter notebooks (.ipynb files) are fully supported in JupyterLab.** The
-`notebook document format <http://nbformat.readthedocs.io/en/latest/>`__ used in
-JupyterLab is the same as in the classic Jupyter Notebook. Your existing notebooks
-should open correctly in JupyterLab. If they don’t, please open an issue on our
-`GitHub issues <https://github.com/jupyterlab/jupyterlab/issues>`__ page.
+
+**JupyterLab完全支持Jupyter笔记本（.ipynb文件）。** JupyterLab中使用的笔记本文档格式与经典的Jupyter Notebook相同。 您现有的笔记本应该在JupyterLab中正确打开。 如果他们不这样做，请在我们的 `GitHub issues <https://github.com/jupyterlab/jupyterlab/issues>`__ 页面上打开一个问题。
+
 
 .. _create-notebook:
 
-Create a notebook by clicking the ``+`` button in the file browser and
-then selecting a kernel in the new Launcher tab:
+单击文件浏览器中的 ``+`` 按钮，然后在新的Launcher选项卡中选择内核，创建一个笔记本：
 
 .. raw:: html
 
@@ -30,9 +25,7 @@ then selecting a kernel in the new Launcher tab:
 
 .. _rename-file:
 
-A new file is created with a default name. Rename a file by
-right-clicking on its name in the file browser and selecting “Rename”
-from the context menu:
+使用默认名称创建新文件。 通过在文件浏览器中右键单击其名称并从上下文菜单中选择“Rename”来重命名文件：
 
 .. raw:: html
 
@@ -40,14 +33,11 @@ from the context menu:
      <iframe src="https://www.youtube-nocookie.com/embed/y3xzXelypjs?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
-The user interface for notebooks in JupyterLab closely follows that of
-the classic Jupyter Notebook. The keyboard shortcuts of the classic
-Notebook continue to work (with command and edit mode). However, a
-number of new things are possible with notebooks in JupyterLab.
+JupyterLab 中 Notebooks 的用户界面紧跟经典 Jupyter Notebook 的用户界面。 经典笔记本的键盘快捷键继续工作（使用命令和编辑模式）。 但是，JupyterLab中的笔记本电脑可能会有许多新功能。
 
 .. _drag-drop:
 
-Drag and drop cells to rearrange your notebook:
+拖放单元格以重新排列笔记本：
 
 .. raw:: html
 
@@ -57,7 +47,7 @@ Drag and drop cells to rearrange your notebook:
 
 .. _drag-copy:
 
-Drag cells between notebooks to quickly copy content:
+在笔记本之间拖动单元格以快速复制内容：
 
 .. raw:: html
 
@@ -67,7 +57,7 @@ Drag cells between notebooks to quickly copy content:
 
 .. _multiple-views:
 
-Create multiple synchronized views of a single notebook:
+创建单个 notebook 的多个同步 views：
 
 .. raw:: html
 
@@ -77,8 +67,7 @@ Create multiple synchronized views of a single notebook:
 
 .. _collapse-code:
 
-Collapse and expand code and output using the View menu or the blue
-collapser button on left of each cell:
+使用 View menu 或每个单元格左侧的蓝色伸缩按钮折叠并展开代码和输出：
 
 .. raw:: html
 
@@ -88,8 +77,7 @@ collapser button on left of each cell:
 
 .. _enable-scrolling:
 
-Enable scrolling for long outputs by right-clicking on a cell and
-selecting “Enable Scrolling for Outputs”:
+通过右键单击单元格并选择 “为输出启用滚动” ，启用长输出滚动：
 
 .. raw:: html
 
@@ -99,7 +87,7 @@ selecting “Enable Scrolling for Outputs”:
 
 .. _cell-output-mirror:
 
-Create a new synchronized view of a cell’s output:
+创建单元格输出的新同步视图：
 
 .. raw:: html
 
@@ -109,8 +97,7 @@ Create a new synchronized view of a cell’s output:
 
 .. _tab-completion:
 
-Tab completion (activated with the ``Tab`` key) can now include additional
-information about the types of the matched items:
+选项卡完成（使用 ``Tab`` 键激活）现在可以包含有关匹配项类型的其他信息：
 
 .. raw:: html
 
@@ -118,14 +105,12 @@ information about the types of the matched items:
      <iframe src="https://www.youtube-nocookie.com/embed/MuNr0i8LgpM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
-Note: IPython 6.3.1 has temporarily disabled type annotations.
-To re-enable them, add ``c.Completer.use_jedi = True`` to an
-`ipython_config.py <http://ipython.readthedocs.io/en/stable/development/config.html>`__ file. 
+
+注意：IPython 6.3.1 暂时禁用了类型注释。 要重新启用它们，请将``c.Completer.use_jedi = True`` 添加到 `ipython_config.py <http://ipython.readthedocs.io/en/stable/development/config.html>`__ 文件中。
 
 .. _tooltip:
 
-The tooltip (activated with ``Shift Tab``) contains additional
-information about objects:
+工具提示（使用 ``Shift Tab`` 激活）包含有关对象的其他信息：
 
 .. raw:: html
 
@@ -135,11 +120,7 @@ information about objects:
 
 .. _create-console:
 
-You can connect a :ref:`code console <code-console>` to a notebook kernel to have a log of
-computations done in the kernel, in the order in which they were done.
-The attached code console also provides a place to interactively inspect
-kernel state without changing the notebook. Right-click on a notebook
-and select “New Console for Notebook”:
+您可以将 :ref:`代码控制台 <code-console>` 连接到笔记本内核，以便按照完成它们的顺序在内核中完成计算日志。 附加的代码控制台还提供了交互式检查内核状态而无需更改笔记本的位置。 右键单击笔记本并选择“New Console for Notebook”：
 
 .. raw:: html
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Documents and Kernels &mdash; JupyterLab 0.18.4 documentation</title>
+  <title>文件和内核 &mdash; JupyterLab 0.18.4 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="File and Output Formats" href="file_formats.html" />
-    <link rel="prev" title="Command Palette" href="commands.html" /> 
+    <link rel="next" title="文件和输出格式" href="file_formats.html" />
+    <link rel="prev" title="命令调用板 Command Palette" href="commands.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -92,18 +92,18 @@
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="interface.html">The JupyterLab Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">JupyterLab API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="urls.html">JupyterLab URLs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">Working with Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file_editor.html">Text Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_editor.html">文本编辑器</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebook.html">Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_console.html">Code Consoles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminal.html">Terminals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="running.html">Managing Kernels and Terminals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands.html">Command Palette</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Documents and Kernels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file_formats.html">File and Output Formats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminal.html">终端（Terminals）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running.html">管理内核和终端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">命令调用板 Command Palette</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">文件和内核</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_formats.html">文件和输出格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">扩展</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyterhub.html">JupyterLab on JupyterHub</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Guide</span></p>
@@ -166,7 +166,7 @@
     
   <li><a href="../index.html">Docs</a> &raquo;</li>
     
-  <li>Documents and Kernels</li>
+  <li>文件和内核</li>
 
     
     <li class="wy-breadcrumbs-aside">
@@ -195,28 +195,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="documents-and-kernels">
-<span id="kernel-backed-documents"></span><h1>Documents and Kernels<a class="headerlink" href="#documents-and-kernels" title="Permalink to this headline">¶</a></h1>
-<p>In the Jupyter architecture, kernels are separate processes started by
-the server that run your code in different programming languages and
-environments. JupyterLab enables you to connect any open text file to a
-<a class="reference internal" href="code_console.html#code-console"><span class="std std-ref">code console and kernel</span></a>. This means you can easily run code from the
-text file in the kernel interactively.</p>
-<p id="create-console">Right-click on a document and select “Create Console for Editor”:</p>
+  <div class="section" id="kernel-backed-documents">
+<span id="id1"></span><h1>文件和内核<a class="headerlink" href="#kernel-backed-documents" title="Permalink to this headline">¶</a></h1>
+<p>在Jupyter体系结构中，内核是由服务器启动的独立进程，它以不同的编程语言和环境运行代码。 JupyterLab使您可以将任何打开的文本文件连接到 <a class="reference internal" href="code_console.html#code-console"><span class="std std-ref">代码控制台和内核</span></a> 。 这意味着您可以交互式地从内核中的文本文件轻松运行代码。</p>
+<p id="create-console">右键单击文档，然后选择“Create Console for Editor”：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/JS2mhCD3rwE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div><p id="send-code">Once the code console is open, send a single line of code or select a
-block of code and send it to the code console by hitting
-<code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Enter</span></code>:</p>
+</div><p id="send-code">代码控制台打开后，发送一行代码或选择一段代码，然后通过按 <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Enter</span></code> 键将其发送到代码控制台：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/ODevllc9PXw?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div><p id="run-markdown">In a Markdown document, <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Enter</span></code> will automatically detect if the
-cursor is within a code block, and run the entire block if there is no
-selection:</p>
+</div><p id="run-markdown">在Markdown文档中， <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">Enter</span></code> 将自动检测光标是否在代码块内，如果没有选择则运行整个块：</p>
 <div class="jp-youtube-video">
    <iframe src="https://www.youtube-nocookie.com/embed/Kz3e7SgqTnI?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div><p><em>Any</em> text file (Markdown, Python, R, LaTeX, C++, etc.) in a text file
-editor can be connected to a code console and kernel in this manner.</p>
+</div><p>文本文件编辑器中的*任何*文本文件（Markdown，Python，R，LaTeX，C ++等）都可以这种方式连接到代码控制台和内核。</p>
 </div>
 
 
@@ -227,10 +218,10 @@ editor can be connected to a code console and kernel in this manner.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="file_formats.html" class="btn btn-neutral float-right" title="File and Output Formats" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="file_formats.html" class="btn btn-neutral float-right" title="文件和输出格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="commands.html" class="btn btn-neutral" title="Command Palette" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="commands.html" class="btn btn-neutral" title="命令调用板 Command Palette" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

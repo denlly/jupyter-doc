@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="General Codebase Orientation" href="../developer/repo.html" />
-    <link rel="prev" title="Extensions" href="extensions.html" /> 
+    <link rel="prev" title="扩展" href="extensions.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -92,22 +92,22 @@
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="interface.html">The JupyterLab Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">JupyterLab API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="urls.html">JupyterLab URLs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">Working with Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file_editor.html">Text Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_editor.html">文本编辑器</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebook.html">Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_console.html">Code Consoles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminal.html">Terminals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="running.html">Managing Kernels and Terminals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands.html">Command Palette</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documents_kernels.html">Documents and Kernels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file_formats.html">File and Output Formats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminal.html">终端（Terminals）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running.html">管理内核和终端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">命令调用板 Command Palette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents_kernels.html">文件和内核</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_formats.html">文件和输出格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">扩展</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">JupyterLab on JupyterHub</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#use-jupyterlab-by-default">Use JupyterLab by Default</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#further-integration">Further Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example-configuration">Example Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">默认情况下使用JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">进一步整合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">示例配置</a></li>
 </ul>
 </li>
 </ul>
@@ -202,38 +202,29 @@
             
   <div class="section" id="jupyterlab-on-jupyterhub">
 <span id="jupyterlab"></span><h1>JupyterLab on JupyterHub<a class="headerlink" href="#jupyterlab-on-jupyterhub" title="Permalink to this headline">¶</a></h1>
-<p>JupyterLab works out of the box with JupyterHub, and can even run side by side
-with the classic Notebook.</p>
-<div class="section" id="use-jupyterlab-by-default">
-<h2>Use JupyterLab by Default<a class="headerlink" href="#use-jupyterlab-by-default" title="Permalink to this headline">¶</a></h2>
-<p>If you install JupyterLab on a system running JupyterHub, it will immediately be
-available at the <code class="docutils literal notranslate"><span class="pre">/lab</span></code> URL, but users will still be directed to the classic
-Notebook (<code class="docutils literal notranslate"><span class="pre">/tree</span></code>) by default. To change the user’s default user interface to
-JupyterLab, set the following configuration option in your
+<p>JupyterLab与JupyterHub一起开箱即用，甚至可以与经典Notebook并排运行。</p>
+<div class="section" id="id1">
+<h2>默认情况下使用JupyterLab<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>如果在运行JupyterHub的系统上安装JupyterLab，它将立即在 <code class="docutils literal notranslate"><span class="pre">/lab</span></code> URL上可用，但默认情况下用户仍将被定向到经典Notebook（<code class="docutils literal notranslate"><span class="pre">/tree</span></code>）。 要将用户的默认用户界面更改为JupyterLab，请在jupyterhub_config.py文件中设置以下配置选项：
 <code class="file docutils literal notranslate"><span class="pre">jupyterhub_config.py</span></code> file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">Spawner</span><span class="o">.</span><span class="n">default_url</span> <span class="o">=</span> <span class="s1">&#39;/lab&#39;</span>
 </pre></div>
 </div>
-<p>In this configuration, users can still access the classic Notebook at <code class="docutils literal notranslate"><span class="pre">/tree</span></code>,
-by either typing that URL into the browser, or by using the “Launch Classic
-Notebook” item in JupyterLab’s Help menu.</p>
+<p>在此配置中，用户仍然可以在``/tree``访问经典Notebook，方法是在浏览器中键入该URL，或者使用JupyterLab的“帮助”菜单中的 “Launch Classic Notebook” 项。</p>
 </div>
-<div class="section" id="further-integration">
-<h2>Further Integration<a class="headerlink" href="#further-integration" title="Permalink to this headline">¶</a></h2>
-<p>Additional integration between JupyterLab and JupyterHub is offered by the
-<a class="reference external" href="https://github.com/jupyterhub/jupyterlab-hub">jupyterlab-hub</a> extension for
-JupyterLab. It provides a Hub menu with items to access the JupyterHub control
-panel or logout of the hub.</p>
-<p>To install the <code class="docutils literal notranslate"><span class="pre">jupyterlab-hub</span></code> extension, run:</p>
+<div class="section" id="id2">
+<h2>进一步整合<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>JupyterLab和JupyterHub之间的额外集成由JupyterLab的 <a class="reference external" href="https://github.com/jupyterhub/jupyterlab-hub">jupyterlab-hub</a> 扩展提供。 它提供了一个Hub菜单，其中包含访问JupyterHub控制面板或注销集线器的项目。</p>
+<p>安装 <code class="docutils literal notranslate"><span class="pre">jupyterlab-hub</span></code> extension, 执行:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="nd">@jupyterlab</span><span class="o">/</span><span class="n">hub</span><span class="o">-</span><span class="n">extension</span>
 </pre></div>
 </div>
-<p>Further directions are provided on the <a class="reference external" href="https://github.com/jupyterhub/jupyterlab-hub">jupyterlab-hub GitHub repository</a>.</p>
+<p><a class="reference external" href="https://github.com/jupyterhub/jupyterlab-hub">jupyterlab-hub GitHub repository</a> 存储库提供了进一步的说明。</p>
 </div>
-<div class="section" id="example-configuration">
-<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">¶</a></h2>
-<p>For a fully-configured example of using JupyterLab with JupyterHub, see
-the <a class="reference external" href="https://github.com/jupyterhub/jupyterhub-deploy-teaching">jupyterhub-deploy-teaching</a> repository.</p>
+<div class="section" id="id3">
+<h2>示例配置<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>有关将JupyterLab与JupyterHub一起使用的完整配置示例，请参阅`jupyterhub-deploy-teaching
+&lt;<a class="reference external" href="https://github.com/jupyterhub/jupyterhub-deploy-teaching">https://github.com/jupyterhub/jupyterhub-deploy-teaching</a>&gt;`__ 存储库。</p>
 </div>
 </div>
 
@@ -248,7 +239,7 @@ the <a class="reference external" href="https://github.com/jupyterhub/jupyterhub
         <a href="../developer/repo.html" class="btn btn-neutral float-right" title="General Codebase Orientation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="extensions.html" class="btn btn-neutral" title="Extensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="extensions.html" class="btn btn-neutral" title="扩展" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

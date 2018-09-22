@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Extensions &mdash; JupyterLab 0.18.4 documentation</title>
+  <title>扩展 &mdash; JupyterLab 0.18.4 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="JupyterLab on JupyterHub" href="jupyterhub.html" />
-    <link rel="prev" title="File and Output Formats" href="file_formats.html" /> 
+    <link rel="prev" title="文件和输出格式" href="file_formats.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -92,24 +92,24 @@
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="interface.html">The JupyterLab Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">JupyterLab API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="urls.html">JupyterLab URLs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">Working with Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file_editor.html">Text Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_editor.html">文本编辑器</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebook.html">Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_console.html">Code Consoles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminal.html">Terminals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="running.html">Managing Kernels and Terminals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands.html">Command Palette</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documents_kernels.html">Documents and Kernels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file_formats.html">File and Output Formats</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Extensions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing-extensions">Installing Extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#disabling-extensions">Disabling Extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#advanced-usage">Advanced Usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#jupyterlab-build-process">JupyterLab Build Process</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jupyterlab-application-directory">JupyterLab Application Directory</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#extensions-1">extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminal.html">终端（Terminals）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running.html">管理内核和终端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">命令调用板 Command Palette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents_kernels.html">文件和内核</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_formats.html">文件和输出格式</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">扩展</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">安装扩展</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">禁用扩展程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">高级用法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jupyterlab-build">JupyterLab Build 过程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jupyterlab-app">JupyterLab app 目录</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#extensions">extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#schemas">schemas</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#settings">settings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#staging-and-static">staging and static</a></li>
@@ -182,7 +182,7 @@
     
   <li><a href="../index.html">Docs</a> &raquo;</li>
     
-  <li>Extensions</li>
+  <li>扩展</li>
 
     
     <li class="wy-breadcrumbs-aside">
@@ -211,193 +211,128 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="extensions">
-<span id="user-extensions"></span><h1>Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h1>
-<p>Fundamentally, JupyterLab is designed as an extensible environment. JupyterLab
-extensions can customize or enhance any part of JupyterLab. They can provide new
-themes, file viewers and editors, or renderers for rich outputs in notebooks.
-Extensions can add items to the menu or command palette, keyboard shortcuts, or
-settings in the settings system. Extensions can provide an API for other
-extensions to use and can depend on other extensions. In fact, the whole of
-JupyterLab itself is simply a collection of extensions that are no more powerful
-or privileged than any custom extension.</p>
-<p>JupyterLab extensions are <a class="reference external" href="https://www.npmjs.com/">npm</a> packages (the
-standard package format in Javascript development). There are many
-community-developed extensions being built on GitHub. You can search for the
-GitHub topic <a class="reference external" href="https://github.com/topics/jupyterlab-extension">jupyterlab-extension</a> to find extensions. For
-information about developing extensions, see the <a class="reference internal" href="../developer/extension_dev.html#developer-extensions"><span class="std std-ref">developer documentation</span></a>.</p>
+  <div class="section" id="user-extensions">
+<span id="id1"></span><h1>扩展<a class="headerlink" href="#user-extensions" title="Permalink to this headline">¶</a></h1>
+<p>从根本上说，JupyterLab的设计是可扩展的。 JupyterLab扩展可以自定义或增强JupyterLab的任何部分。 他们可以为 Notebook 中的丰富输出提供新的皮肤，文件查看器和编辑器或渲染器。 扩展可以将项添加到菜单或命令选项板，键盘快捷键或设置系统中的设置。 扩展可以为其他扩展提供API，并且可以依赖于其他扩展。 事实上，整个JupyterLab 本身只是一个扩展的集合，它们不比任何自定义扩展有更多的强大。</p>
+<p>JupyterLab 采用npm包（Javascript开发中的标准包格式）进行扩展。 在GitHub上构建了许多社区开发的扩展。 您可以搜索GitHub主题 <a class="reference external" href="https://github.com/topics/jupyterlab-extension">jupyterlab-extension</a> 来查找扩展名。 有关开发扩展的信息，请参阅 <a class="reference internal" href="../developer/extension_dev.html#developer-extensions"><span class="std std-ref">开发人员文档</span></a> 。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you are a JupyterLab extension developer, please note that the extension
-developer API is not stable and will evolve in the near future.</p>
+<p class="last">如果您是JupyterLab 扩展开发人员，请注意扩展开发人员API不稳定，并且会不断更新。</p>
 </div>
-<p>In order to install JupyterLab extensions, you need to have <a class="reference external" href="https://nodejs.org/">Node.js</a> installed.</p>
-<p>If you use <code class="docutils literal notranslate"><span class="pre">conda</span></code>, you can get it with:</p>
+<p>要安装JupyterLab扩展，您需要安装Node.js版本4或更高版本。
+如果您使用 <code class="docutils literal notranslate"><span class="pre">conda</span></code>，您可以使用：</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">nodejs</span>
 </pre></div>
 </div>
-<p>If you use <a class="reference external" href="https://brew.sh/">Homebrew</a> on Mac OS X:</p>
+<p>如果你的操作系统是 MacOS，可以通过 <a class="reference external" href="https://brew.sh/">Homebrew</a>  安装:</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">node</span>
 </pre></div>
 </div>
-<p>You can also download Node.js from the <a class="reference external" href="https://nodejs.org/">Node.js website</a> and
-install it directly.</p>
-<div class="section" id="installing-extensions">
-<h2>Installing Extensions<a class="headerlink" href="#installing-extensions" title="Permalink to this headline">¶</a></h2>
+<p>您也可以`Node.js website &lt;<a class="reference external" href="https://nodejs.org/">https://nodejs.org/</a>&gt;`__ 的官网下载 Node.js，并且安装。</p>
+<div class="section" id="id2">
+<h2>安装扩展<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>The base JupyterLab application includes a core set of extensions, which
 provide the features described in this user guide (notebook, terminal,
 text editor, etc.) You can install new extensions into the application
 using the command:</p>
+<p>JupyterLab application 包含一组核心扩展，提供本用户指南（notebook，终端，文本编辑器等）中描述的功能。您可以使用以下命令在应用程序中安装新扩展：</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="n">my</span><span class="o">-</span><span class="n">extension</span>
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">my-extension</span></code> is the name of a valid JupyterLab extension npm package
-on <a class="reference external" href="https://www.npmjs.com">npm</a>. Use the <code class="docutils literal notranslate"><span class="pre">my-extension&#64;version</span></code>
-syntax to install a specific version of an extension, for example:</p>
+<p>其中``my-extension``是 <a class="reference external" href="https://www.npmjs.com">npm</a> 上有效的JupyterLab扩展名npm包的名称。 使用my-extension &#64; version语法安装特定版本的扩展，例如：</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="n">my</span><span class="o">-</span><span class="n">extension</span><span class="nd">@1</span><span class="o">.</span><span class="mf">2.3</span>
 </pre></div>
 </div>
-<p>You can also install an extension that is not uploaded to npm, i.e.,
-<code class="docutils literal notranslate"><span class="pre">my-extension</span></code> can be a local directory containing the extension, a gzipped
-tarball, or a URL to a gzipped tarball.</p>
-<p>We encourage extension authors to add the <code class="docutils literal notranslate"><span class="pre">jupyterlab-extension</span></code>
-GitHub topic to any repository with a JupyterLab extension to facilitate
-discovery. You can see a list of extensions by searching GitHub for the
-<a class="reference external" href="https://github.com/search?utf8=%E2%9C%93&amp;q=topic%3Ajupyterlab-extension&amp;type=Repositories">jupyterlab-extension</a>
-topic.</p>
-<p>You can list the currently installed extensions by running the command:</p>
+<p>您还可以安装未上传到npm的扩展，即``my-extension``可以是包含扩展名，gzip压缩包或gzip压缩包的URL的本地目录。</p>
+<p>我们鼓励扩展作者将``jupyterlab-extension`` 添加到任何具有JupyterLab扩展名的GitHub存储库，以便于发现。 您可以通过在GitHub中搜索`jupyterlab-extension &lt;<a class="reference external" href="https://github.com/search?utf8=%E2%9C%93&amp;q=topic%3Ajupyterlab-extension&amp;type=Repositories">https://github.com/search?utf8=%E2%9C%93&amp;q=topic%3Ajupyterlab-extension&amp;type=Repositories</a>&gt;`__ 主题来查看扩展列表。</p>
+<p>您可以通过运行以下命令列出当前安装的扩展：</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="nb">list</span>
 </pre></div>
 </div>
-<p>Uninstall an extension by running the command:</p>
+<p>通过运行以下命令卸载扩展：</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">uninstall</span> <span class="n">my</span><span class="o">-</span><span class="n">extension</span>
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">my-extension</span></code> is the name of the extension, as printed in the
-extension list. You can also uninstall core extensions using this
-command (you can always re-install core extensions later).</p>
-<p>Installing and uninstalling extensions can take some time, as they are
-downloaded, bundled with the core extensions, and the whole application
-is rebuilt. You can install/uninstall more than one extension in the
-same command by listing their names after the <code class="docutils literal notranslate"><span class="pre">install</span></code> command.</p>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">my-extension</span></code> 是扩展名，打印在扩展名列表中。 您也可以使用此命令卸载核心扩展（您可以随时重新安装核心扩展）。</p>
+<p>安装和卸载扩展可能需要一些时间，因为它们已下载，与核心扩展捆绑在一起，整个应用程序将 <em>Rebuild</em> 。 您可以通过在 <code class="docutils literal notranslate"><span class="pre">install</span></code> 命令后列出其名称来在同一命令中安装/卸载多个扩展。</p>
 <p>If you are installing/uninstalling several extensions in several stages,
 you may want to defer rebuilding the application by including the flag
 <code class="docutils literal notranslate"><span class="pre">--no-build</span></code> in the install/uninstall step. Once you are ready to
 rebuild, you can run the command:</p>
+<p>如果要在几个阶段中安装/卸载多个扩展，则可能需要通过在安装/卸载步骤中包含标志``–no-build``来推迟重建应用程序。 准备好Rebuid后，可以运行以下命令：</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">lab</span> <span class="n">build</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="disabling-extensions">
-<h2>Disabling Extensions<a class="headerlink" href="#disabling-extensions" title="Permalink to this headline">¶</a></h2>
-<p>You can disable specific JupyterLab extensions (including core
-extensions) without rebuilding the application by running the command:</p>
+<div class="section" id="id3">
+<h2>禁用扩展程序<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>您可以通过运行以下命令禁用特定的JupyterLab扩展（包括核心扩展），而无需Rebuild应用程序：</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">disable</span> <span class="n">my</span><span class="o">-</span><span class="n">extension</span>
 </pre></div>
 </div>
-<p>This will prevent the extension from loading in the browser, but does not
-require a rebuild.</p>
-<p>You can re-enable an extension using the command:</p>
+<p>这将阻止扩展程序在浏览器中加载，但不需要Rebuild。</p>
+<p>您可以使用以下命令重新启用扩展：</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">enable</span> <span class="n">my</span><span class="o">-</span><span class="n">extension</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="advanced-usage">
-<h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h2>
-<p>Any information that JupyterLab persists is stored in its application directory,
-including settings and built assets.
-This is separate from where the Python package is installed (like in <code class="docutils literal notranslate"><span class="pre">site_packages</span></code>)
-so that the install directory is immutable.</p>
-<p>The application directory can be overridden using <code class="docutils literal notranslate"><span class="pre">--app-dir</span></code> in
-any of the JupyterLab commands, or by setting the <code class="docutils literal notranslate"><span class="pre">JUPYTERLAB_DIR</span></code>
-environment variable. If not specified, it will default to
-<code class="docutils literal notranslate"><span class="pre">&lt;sys-prefix&gt;/share/jupyter/lab</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;sys-prefix&gt;</span></code> is the
-site-specific directory prefix of the current Python environment. You
-can query the current application path by running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span> <span class="pre">path</span></code>.</p>
-<div class="section" id="jupyterlab-build-process">
-<h3>JupyterLab Build Process<a class="headerlink" href="#jupyterlab-build-process" title="Permalink to this headline">¶</a></h3>
-<p>To rebuild the app directory, run <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span> <span class="pre">build</span></code>. By default, the
-<code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">labextension</span> <span class="pre">install</span></code> command builds the application, so you
-typically do not need to call <code class="docutils literal notranslate"><span class="pre">build</span></code> directly.</p>
-<p>Building consists of:</p>
+<div class="section" id="id4">
+<h2>高级用法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>JupyterLab持久存储的任何信息都存储在其应用程序目录中，包括设置和构建资产。 这与安装Python包的位置（例如在``site_packages``中）是分开的，因此安装目录是不可变的。</p>
+<p>可以在任何JupyterLab命令中使用 <code class="docutils literal notranslate"><span class="pre">--app-dir</span></code> 覆盖应用程序目录，也可以通过设置JUPYTERLAB_DIR环境变量来覆盖应用程序目录。 如果未指定，则默认为``&lt;sys-prefix&gt;/share/jupyter/lab``，其中&lt;sys-prefix&gt;是当前Python环境的特定于站点的目录前缀。 您可以通过运行 <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span> <span class="pre">path</span></code> 来查询当前的应用程序路径。</p>
+<div class="section" id="jupyterlab-build">
+<h3>JupyterLab Build 过程<a class="headerlink" href="#jupyterlab-build" title="Permalink to this headline">¶</a></h3>
+<p>要 rebuild app目录，请运行``jupyter lab build``。 默认情况下，<code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">labextension</span> <span class="pre">install`</span> <span class="pre">命令构建应用程序，因此您通常不需要直接调用``build</span></code> 。</p>
+<p>Build 过程包括:</p>
 <ul class="simple">
-<li>Populating the <code class="docutils literal notranslate"><span class="pre">staging/</span></code> directory using template files</li>
-<li>Handling any locally installed packages</li>
-<li>Ensuring all installed assets are available</li>
-<li>Bundling the assets</li>
-<li>Copying the bundled assets to the <code class="docutils literal notranslate"><span class="pre">static</span></code> directory</li>
+<li>使用模板文件填充``staging``目录</li>
+<li>处理任何本地安装的包</li>
+<li>确保所有已安装的资源（assets）都可用</li>
+<li>打包资源（assets）</li>
+<li>将打包的资源（assets）复制到``static``目录</li>
 </ul>
 <p>Note that building will always use the latest JavaScript packages that meet
 the dependency requirements of JupyterLab itself and any installed extensions.
 If you wish to run JupyterLab with the set of pinned requirements that was
 shipped with the Python package, you can launch as <cite>jupyter lab –core-mode</cite>.</p>
+<p>请注意，构建将始终使用最新的JavaScript包，以满足JupyterLab本身和任何已安装扩展的依赖性要求。 如果您希望使用Python包附带的一组固定需求运行JupyterLab，您可以启动为`jupyter lab –core-mode`。</p>
 </div>
-<div class="section" id="jupyterlab-application-directory">
-<h3>JupyterLab Application Directory<a class="headerlink" href="#jupyterlab-application-directory" title="Permalink to this headline">¶</a></h3>
-<p>The JupyterLab application directory contains the subdirectories
-<code class="docutils literal notranslate"><span class="pre">extensions</span></code>, <code class="docutils literal notranslate"><span class="pre">schemas</span></code>, <code class="docutils literal notranslate"><span class="pre">settings</span></code>, <code class="docutils literal notranslate"><span class="pre">staging</span></code>, <code class="docutils literal notranslate"><span class="pre">static</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">themes</span></code>.</p>
-<div class="section" id="extensions-1">
-<span id="id1"></span><h4>extensions<a class="headerlink" href="#extensions-1" title="Permalink to this headline">¶</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">extensions</span></code> directory has the packed tarballs for each of the
-installed extensions for the app. If the application directory is not
-the same as the <code class="docutils literal notranslate"><span class="pre">sys-prefix</span></code> directory, the extensions installed in
-the <code class="docutils literal notranslate"><span class="pre">sys-prefix</span></code> directory will be used in the app directory. If an
-extension is installed in the app directory that exists in the
-<code class="docutils literal notranslate"><span class="pre">sys-prefix</span></code> directory, it will shadow the <code class="docutils literal notranslate"><span class="pre">sys-prefix</span></code> version.
-Uninstalling an extension will first uninstall the shadowed extension,
-and then attempt to uninstall the <code class="docutils literal notranslate"><span class="pre">sys-prefix</span></code> version if called
-again. If the <code class="docutils literal notranslate"><span class="pre">sys-prefix</span></code> version cannot be uninstalled, its plugins
-can still be ignored using <code class="docutils literal notranslate"><span class="pre">ignoredPackages</span></code> metadata in <code class="docutils literal notranslate"><span class="pre">settings</span></code>.</p>
+<div class="section" id="jupyterlab-app">
+<h3>JupyterLab app 目录<a class="headerlink" href="#jupyterlab-app" title="Permalink to this headline">¶</a></h3>
+<p>JupyterLab应用程序目录包含子目录``extensions``, <code class="docutils literal notranslate"><span class="pre">schemas</span></code>, <code class="docutils literal notranslate"><span class="pre">settings</span></code>, <code class="docutils literal notranslate"><span class="pre">staging</span></code>, <code class="docutils literal notranslate"><span class="pre">static</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">themes</span></code>。</p>
+<div class="section" id="extensions">
+<span id="extensions-1"></span><h4>extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">extensions</span></code> 目录包含应用程序的每个已安装扩展的打包tarball。 如果应用程序目录与``sys-prefix``目录不同，则``sys-prefix``目录中安装的扩展将在app目录中使用。 如果在``sys-prefix``目录中存在的app目录中安装了扩展，则它将隐藏``sys-prefix``版本。 卸载扩展将首先卸载带阴影的扩展，然后再次调用时尝试卸载``sys-prefix``版本。 如果无法卸载``sys-prefix``版本，则仍可使用设置中的``ignoredPackages``元数据忽略其插件。</p>
 </div>
 <div class="section" id="schemas">
 <h4>schemas<a class="headerlink" href="#schemas" title="Permalink to this headline">¶</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">schemas</span></code> directory contains <a class="reference external" href="http://json-schema.org/">JSON
-Schemas</a> that describe the settings used by
-individual extensions. Users may edit these settings using the
-JupyterLab Settings Editor.</p>
+<p><code class="docutils literal notranslate"><span class="pre">schemas</span></code> 目录包含描述各个扩展使用的设置的 <a class="reference external" href="http://json-schema.org/">JSON
+Schemas</a> 。 用户可以使用JupyterLab设置编辑器编辑这些设置。</p>
 </div>
 <div class="section" id="settings">
 <h4>settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">settings</span></code> directory contains <code class="docutils literal notranslate"><span class="pre">page_config.json</span></code> and
-<code class="docutils literal notranslate"><span class="pre">build_config.json</span></code> files.</p>
+<p><code class="docutils literal notranslate"><span class="pre">settings``目录包含</span> <span class="pre">``page_config.json</span></code> 和``build_config.json``文件。</p>
 <p id="page-configjson">page_config.json</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">page_config.json</span></code> data is used to provide config data to the
-application environment.</p>
-<p>Two important fields in the <code class="docutils literal notranslate"><span class="pre">page_config.json</span></code> file enable control of
-which plugins load:</p>
-<ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">disabledExtensions</span></code> for extensions that should not load at all.</li>
-<li><code class="docutils literal notranslate"><span class="pre">deferredExtensions</span></code> for extensions that do not load until they are
-required by something, irrespective of whether they set <code class="docutils literal notranslate"><span class="pre">autostart</span></code>
-to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</li>
+<p><code class="docutils literal notranslate"><span class="pre">page_config.json</span></code> 数据用于向应用程序环境提供配置数据。</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">page_config.json</span></code> 文件中的两个重要字段可以控制加载哪些插件：</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">disabledExtensions</span></code> 表示根本不应加载的扩展名。</li>
+<li>对于在某些内容需要之前不加载的扩展的``deferredExtensions``，无论它们是否将``autostart``设置为``true``。</li>
 </ol>
-<p>The value for each field is an array of strings. The following sequence
-of checks are performed against the patterns in <code class="docutils literal notranslate"><span class="pre">disabledExtensions</span></code>
-and <code class="docutils literal notranslate"><span class="pre">deferredExtensions</span></code>.</p>
+</div></blockquote>
+</div></blockquote>
+<p>每个字段的值是一个字符串数组。 对``disabledExtensions``和``deferredExtensions``中的模式执行以下检查序列。</p>
 <ul class="simple">
-<li>If an identical string match occurs between a config value and a
-package name (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;&#64;jupyterlab/apputils-extension&quot;</span></code>), then the
-entire package is disabled (or deferred).</li>
-<li>If the string value is compiled as a regular expression and tests
-positive against a package name (e.g.,
-<code class="docutils literal notranslate"><span class="pre">&quot;disabledExtensions&quot;:</span> <span class="pre">[&quot;&#64;jupyterlab/apputils*$&quot;]</span></code>), then the
-entire package is disabled (or deferred).</li>
-<li>If an identical string match occurs between a config value and an
-individual plugin ID within a package (e.g.,
-<code class="docutils literal notranslate"><span class="pre">&quot;disabledExtensions&quot;:</span> <span class="pre">[&quot;&#64;jupyterlab/apputils-extension:settings&quot;]</span></code>),
-then that specific plugin is disabled (or deferred).</li>
-<li>If the string value is compiled as a regular expression and tests
-positive against an individual plugin ID within a package (e.g.,
-<code class="docutils literal notranslate"><span class="pre">&quot;disabledExtensions&quot;:</span> <span class="pre">[&quot;^&#64;jupyterlab/apputils-extension:set.*$&quot;]</span></code>),
-then that specific plugin is disabled (or deferred).</li>
+<li>如果在配置值和包名称之间发生相同的字符串匹配（例如，<code class="docutils literal notranslate"><span class="pre">“&#64;jupyterlab/apputils-extension”</span></code>），则整个包被禁用（或延迟）。</li>
+<li>如果字符串值被编译为正则表达式并且对包名称测试为正（例如，<code class="docutils literal notranslate"><span class="pre">“disabledExtensions”：[“&#64;jupyterlab/apputils*$”]</span></code>），则整个包被禁用（或延迟）。</li>
+<li>如果在配置值和包中的单个插件ID之间发生相同的字符串匹配（例如，<code class="docutils literal notranslate"><span class="pre">“disabledExtensions”：[“&#64;jupyterlab/apputils-extension：settings”]</span></code>），则该特定插件被禁用（或延迟）。</li>
+<li>如果将字符串值编译为正则表达式并对包中的单个插件ID进行正向测试（例如，<code class="docutils literal notranslate"><span class="pre">&quot;disabledExtensions&quot;:</span> <span class="pre">[&quot;^&#64;jupyterlab/apputils-extension:set.*$&quot;]</span></code>），则该特定插件 被禁用（或延期）。</li>
 </ul>
 <p id="build-configjson">build_config.json</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">build_config.json</span></code> file is used to track the local directories
-that have been installed using
-<code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">labextension</span> <span class="pre">install</span> <span class="pre">&lt;directory&gt;</span></code>, as well as core extensions
-that have been explicitly uninstalled. An example of a
-<code class="docutils literal notranslate"><span class="pre">build_config.json</span></code> file is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">build_config.json``文件用于跟踪使用</span> <span class="pre">``jupyter</span> <span class="pre">labextension</span> <span class="pre">install</span> <span class="pre">&lt;directory&gt;</span></code> 安装的本地目录，以及已明确卸载的核心扩展。 <code class="docutils literal notranslate"><span class="pre">build_config.json</span></code> 文件的示例是：</p>
 <div class="code json highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;uninstalled_core_extensions&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="s2">&quot;@jupyterlab/markdownwidget-extension&quot;</span>
@@ -411,18 +346,12 @@ that have been explicitly uninstalled. An example of a
 </div>
 <div class="section" id="staging-and-static">
 <h4>staging and static<a class="headerlink" href="#staging-and-static" title="Permalink to this headline">¶</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">static</span></code> directory contains the assets that will be loaded by the
-JuptyerLab application. The <code class="docutils literal notranslate"><span class="pre">staging</span></code> directory is used to create the
-build and then populate the <code class="docutils literal notranslate"><span class="pre">static</span></code> directory.</p>
-<p>Running <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> will attempt to run the <code class="docutils literal notranslate"><span class="pre">static</span></code> assets in the
-application directory if they exist. You can run
-<code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span> <span class="pre">--core-mode</span></code> to load the core JupyterLab application
-(i.e., the application without any extensions) instead.</p>
+<p><code class="docutils literal notranslate"><span class="pre">static</span></code> 目录包含将由JuptyerLab应用程序加载的assets。 <code class="docutils literal notranslate"><span class="pre">staging</span></code> 目录用于创建构建，然后填充``staging``目录。</p>
+<p>运行``jupyter lab``将尝试在应用程序目录中运行``static assets``（如果存在）。 您可以运行``jupyter lab –core-mode`` 来加载核心JupyterLab应用程序（即没有任何扩展的应用程序）。</p>
 </div>
 <div class="section" id="themes">
 <h4>themes<a class="headerlink" href="#themes" title="Permalink to this headline">¶</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">themes</span></code> directory contains assets (such as CSS and icons) for
-JupyterLab theme extensions.</p>
+<p><code class="docutils literal notranslate"><span class="pre">themes</span></code> 目录包含JupyterLab Themes 扩展的资源（例如CSS和图标）。</p>
 </div>
 </div>
 </div>
@@ -439,7 +368,7 @@ JupyterLab theme extensions.</p>
         <a href="jupyterhub.html" class="btn btn-neutral float-right" title="JupyterLab on JupyterHub" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="file_formats.html" class="btn btn-neutral" title="File and Output Formats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="file_formats.html" class="btn btn-neutral" title="文件和输出格式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

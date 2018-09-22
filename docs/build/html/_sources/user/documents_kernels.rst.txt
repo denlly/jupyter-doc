@@ -1,17 +1,13 @@
 .. _kernel-backed-documents:
 
-Documents and Kernels
+文件和内核
 ---------------------
 
-In the Jupyter architecture, kernels are separate processes started by
-the server that run your code in different programming languages and
-environments. JupyterLab enables you to connect any open text file to a
-:ref:`code console and kernel <code-console>`. This means you can easily run code from the
-text file in the kernel interactively.
+在Jupyter体系结构中，内核是由服务器启动的独立进程，它以不同的编程语言和环境运行代码。 JupyterLab使您可以将任何打开的文本文件连接到 :ref:`代码控制台和内核<code-console>` 。 这意味着您可以交互式地从内核中的文本文件轻松运行代码。
 
 .. _create-console:
 
-Right-click on a document and select “Create Console for Editor”:
+右键单击文档，然后选择“Create Console for Editor”：
 
 .. raw:: html
 
@@ -21,9 +17,7 @@ Right-click on a document and select “Create Console for Editor”:
 
 .. _send-code:
 
-Once the code console is open, send a single line of code or select a
-block of code and send it to the code console by hitting
-``Shift Enter``:
+代码控制台打开后，发送一行代码或选择一段代码，然后通过按 ``Shift Enter`` 键将其发送到代码控制台：
 
 .. raw:: html
 
@@ -33,9 +27,7 @@ block of code and send it to the code console by hitting
 
 .. _run-markdown:
 
-In a Markdown document, ``Shift Enter`` will automatically detect if the
-cursor is within a code block, and run the entire block if there is no
-selection:
+在Markdown文档中， ``Shift Enter`` 将自动检测光标是否在代码块内，如果没有选择则运行整个块：
 
 .. raw:: html
 
@@ -43,5 +35,4 @@ selection:
      <iframe src="https://www.youtube-nocookie.com/embed/Kz3e7SgqTnI?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
-*Any* text file (Markdown, Python, R, LaTeX, C++, etc.) in a text file
-editor can be connected to a code console and kernel in this manner.
+文本文件编辑器中的*任何*文本文件（Markdown，Python，R，LaTeX，C ++等）都可以这种方式连接到代码控制台和内核。

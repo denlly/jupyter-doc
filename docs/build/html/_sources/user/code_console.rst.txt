@@ -3,16 +3,11 @@
 Code Consoles
 -------------
 
-Code consoles enable you to run code interactively in a kernel. The cells
-of a code console show the order in which code was executed in the
-kernel, as opposed to the explicit ordering of cells in a notebook
-document. Code consoles also display rich output, just like notebook
-cells.
+Code Consoles 使您能够在内核中以交互方式运行代码。 Code Consoles 的单元格显示了代码在内核中执行的顺序，而不是 notebook 文档中单元格的显式排序。 代码控制台也显示丰富的输出，就像笔记本电脑一样。
 
 .. _create-console:
 
-Create a new code console by clicking the ``+`` button in the :ref:`file
-browser <left-sidebar>` and selecting the kernel:
+单击 :ref:`文件浏览器 <left-sidebar>` 中的 ``+`` 按钮并选择内核，创建一个新的代码控制台：
 
 .. raw:: html
 
@@ -22,8 +17,7 @@ browser <left-sidebar>` and selecting the kernel:
 
 .. _run-code:
 
-Run code using ``Shift Enter``. Use the up and down arrows to browse the
-history of previously-run code:
+使用 ``Shift Enter`` 运行代码。 使用向上和向下箭头浏览以前运行的代码的历史记录：
 
 .. raw:: html
 
@@ -33,8 +27,7 @@ history of previously-run code:
 
 .. _tab-completion:
 
-Tab completion (``Tab``) and tooltips (``Shift Tab``) work as in the
-notebook:
+选项卡完成（``Tab``）和工具提示（``Shift Tab``）在笔记本中起作用：
 
 .. raw:: html
 
@@ -44,8 +37,7 @@ notebook:
 
 .. _clear-cell:
 
-Clear the cells of the code console without restarting the kernel by
-right-clicking on the code console and selecting “Clear Console Cells”:
+通过右键单击代码控制台并选择“Clear Console Cells”，清除代码控制台的单元格而不重新启动内核：
 
 .. raw:: html
 
@@ -55,10 +47,7 @@ right-clicking on the code console and selecting “Clear Console Cells”:
 
 .. _log-inspect:
 
-Creating a code console from the :ref:`file menu <menu-bar>` lets you select an existing
-kernel for the code console. The code console then acts as a log of
-computations in that kernel, and a place you can interactively inspect
-and run code in the kernel:
+从 :ref:`file menu  <menu-bar>` 创建代码控制台可让您为代码控制台选择现有内核。 然后代码控制台充当该内核中计算的日志，以及可以在内核中交互式检查和运行代码的位置：
 
 .. raw:: html
 
