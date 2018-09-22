@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 JupyterLab Documentation （beta）
-========================
+========================================
 
 JupyterLab is the next-generation web-based user interface for Project Jupyter. `Try it on Binder <https://mybinder.org/v2/gh/jupyterlab/jupyterlab-demo/master?urlpath=lab/tree/demo>`__.  JupyterLab follows the Jupyter [Community Guides](https://jupyter.readthedocs.io/en/latest/community/content-community.html).
 

@@ -3,9 +3,9 @@
 JupyterLab API
 ------------------------
 
-JupyterLab为交互式探索性计算提供灵活的构建块。虽然JupyterLab具有传统集成开发环境（IDE）中的许多功能，但它仍然专注于交互式探索性计算。
+JupyterLab 为交互式探索性计算提供灵活的构建块。虽然 JupyterLab 具有传统集成开发环境（IDE）中的许多功能，但它仍然专注于交互式探索性计算。
 
-JupyterLab界面包含一个 :ref:`主工作区 <main-area>` ，包含文档和活动选项卡，可折叠 :ref:`左侧边栏 <left-sidebar>` 和 :ref:`菜单栏 <menu-bar>`。 左侧边栏包含 :ref:`文件浏览器 <working-with-files>` ，正在运行的 :ref:`内核和终端列表 <running>` ，:ref:`命令选项板<commands>` ， :ref:`笔记本单元工具检查器 <notebook>` 和 :ref:`选项卡列表 <tabs>` 。
+JupyterLab 界面包含一个 :ref:`主工作区 <main-area>` ，包含文档和活动选项卡，可折叠 :ref:`左侧边栏 <left-sidebar>` 和 :ref:`菜单栏 <menu-bar>`。 左侧边栏包含 :ref:`文件浏览器 <working-with-files>` ，正在运行的 :ref:`内核和终端列表 <running>` ，:ref:`命令选项板<commands>` ， :ref:`笔记本单元工具检查器 <notebook>` 和 :ref:`选项卡列表 <tabs>` 。
 
 .. image:: images/interface_jupyterlab.png
    :align: center
