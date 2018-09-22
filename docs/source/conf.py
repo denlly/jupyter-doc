@@ -56,7 +56,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = 'JupyterLab'
+project = 'JupyterLab cn(beta)'
 copyright = '2018, Project Jupyter'
 author = 'Project Jupyter'
 
@@ -129,7 +129,7 @@ html_sidebars = {
 
 # Output for github to be used in links
 html_context = {
-    "display_github": True,  # Integrate GitHub
+    "display_github": False,  # Integrate GitHub
     "github_user": "denlly",  # Username
     "github_repo": "jupyter-doc",  # Repo name
     "github_version": "master",  # Version
