@@ -40,8 +40,8 @@ IPython显示功能还可以从密钥字典（MIME类型）和值（MIME数据�
 Markdown
 ~~~~~~~~
 
--  文件扩展名: ``.md``
--  MIME 类型: ``text/markdown``
+-  File extension: ``.md``
+-  MIME type: ``text/markdown``
 
 Markdown是一种简单而流行的标记语言，用于Jupyter Notebook中的文本编辑。
 
@@ -62,9 +62,9 @@ Markdown文档可以像文本文件一样编辑，并且可以渲染后呈现：
 图片
 ~~~~~~
 
--  文件扩展名: ``.bmp``, ``.gif``, ``.jpeg``, ``.jpg``, ``.png``,
+-  File extension: ``.bmp``, ``.gif``, ``.jpeg``, ``.jpg``, ``.png``,
    ``.svg``
--  MIME 类型: ``image/bmp``, ``image/gif``, ``image/jpeg``,
+-  MIME type: ``image/bmp``, ``image/gif``, ``image/jpeg``,
    ``image/png``, ``image/svg+xml``
 
 JupyterLab支持单元格输出图像数据以及上述格式的文件。 在图像文件查看器中，您可以使用键盘快捷键（如``+``和 ``-`` ）来缩放图像，``[``和``]`` 旋转图像，使用``H``和``V``来水平和垂直翻转图像。 使用``I``反转颜色，并使用``0``重置图像。
