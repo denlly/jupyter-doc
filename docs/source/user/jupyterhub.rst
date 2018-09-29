@@ -1,7 +1,7 @@
 .. _jupyterlab:
 
-JupyterLab on JupyterHub
-------------------------
+JupyterLab 执行在 JupyterHub 里
+-------------------------------------------------
 
 JupyterLab与JupyterHub一起开箱即用，甚至可以与经典Notebook并排运行。
 
