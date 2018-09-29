@@ -1,74 +1,60 @@
 .. _developer-guide:
 
-The JupyterLab Developer Guide is for developing JupyterLab extensions or developing JupyterLab itself.
+Jupylab开发指南是开发 Jupylab 扩展 (extensions) 或开发 Jupylab 自身。
 
 General Codebase Orientation
 ----------------------------
 
-The ``jupyterlab/jupyterlab`` repository contains two packages:
+ ``jupyterlab/jupyterlab`` 包含两个 package 的声明:
 
--  an npm package indicated by a ``package.json`` file in the repo's
-   root directory
--  a Python package indicated by a ``setup.py`` file in the repo's root
-   directory
+-  在 repo 的根目录中的 ``package.json``文件指示的是 npm 包
 
-The npm package and the Python package are both named ``jupyterlab``.
+-  在repo的根目录中的 ``setup.py``文件指示的是Python包
+npm包和Python包都命名为 ``jupyterlab``.
 
-See the `Contributing
+请查看 `Contributing
 Guidelines <https://github.com/jupyterlab/jupyterlab/blob/master/CONTRIBUTING.md>`__
-for developer installation instructions.
+开发安装说明
 
-Directories
-~~~~~~~~~~~
+项目文件夹 (Directories) 说明
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 NPM package: ``src/``, ``lib/``, ``typings/``, ``buildutils/``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  ``src/``: the source typescript files.
+-  ``src/``: Typescript 源文件.
 
-   -  ``jlpm run build`` builds the source files into javascript files
-      in ``lib/``.
-   -  ``jlpm run clean`` deletes the ``lib/`` directory.
+   -  ``jlpm run build`` build 源文件，将build后的文件放入 ``lib/`` 文件夹里.
+   -  ``jlpm run clean``删除 ``lib/`` 里的文件.
 
--  ``typings/``: type definitions for external libraries that typescript
+-  ``typings/``: 外部Typescript 的 library 定义的类型
    needs.
--  ``buildutils/``: Utilities for managing the repo
+-  ``buildutils/``: 管理 repo 的 build 过程
 
-Examples: ``examples/``
+实例: ``examples/``
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``examples/`` directory contains stand-alone examples of components,
-such as a simple notebook on a page, a console, terminal, and a
-filebrowser. The ``lab`` example illustrates a simplified combination of
-components used in JupyterLab. This example shows multiple stand-alone
-components combined to create a more complex application.
+``examples/`` 目录包含组件的独立示例，例如页面上的简单笔记本，控制台，终端和文件浏览器。 ``lab`` 示例说明了 JupyterLab中使用的组件的简化组合。 此示例显示多个独立组件组合在一起以创建更复杂的应用程序。
 
-Testing: ``test/``
+测试: ``test/``
 ^^^^^^^^^^^^^^^^^^
 
-The tests are stored and run in the ``test/`` directory. The source
-files are in ``test/src/``.
+测试存储并在 ``test/``目录中运行。 源文件位于``test/src/``中。
 
 Notebook extension: ``jupyterlab/``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``jupyterlab/`` directory contains the Jupyter server extension.
+ ``jupyterlab/`` 目录包含Jupyter服务器扩展。
 
-The server extension includes a private npm package in order to build
-the **webpack bundle** which the extension serves. The private npm
-package depends on the ``jupyterlab`` npm package found in the repo's
-root directory.
+服务器扩展包括一个私有的npm包，以便构建扩展服务的 **webpack bundle** 。 私有npm包依赖于 repo 根目录中的 jupyterlab npm包。
 
 Git hooks: ``git-hooks/``
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``git-hooks/`` directory stores some convenience git hooks that
-automatically rebuild the npm package and server extension every time
-you check out or merge (via pull request or direct push to master) in
-the git repo.
+ ``git-hooks/`` 目录存储了一些方便的git hooks，每次你在git repo中签出或合并（通过pull请求或直接push到master）时，它会自动重建npm包和服务器扩展。
 
 Documentation: ``docs/``
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-After building the docs (``jlpm run docs``), ``docs/index.html`` is the
-entry point to the documentation.
+在构建文档（ ``jlpm run docs`` ）之后， ``docs / index.html`` 就是了
+文档的入口点。
