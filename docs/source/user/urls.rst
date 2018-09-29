@@ -1,21 +1,22 @@
 .. _urls:
 
-JupyterLab URLs
----------------
+JupyterLab 链接(URLs)
+----------------------------
 
-与经典笔记本一样，JupyterLab为用户提供了一种复制打开特定笔记本或文件的URL的方法。 此外，JupyterLab URLs是用户界面的高级部分，允许管理工作区。 这两个函数 - 文件路径和工作空间 - 可以 :ref:`组合在打开特定工作空间中特定文件的URL中<url-combine>`。
+与经典 notebook 一样，JupyterLab为用户提供了一种复制打开特定笔记本或文件的URL的方法。 此外，JupyterLab 连接(URLs)是用户界面的高级部分，允许管理工作区。 这两个函数 - 文件路径和工作空间 - 可以 :ref:`组合在打开特定工作空间中特定文件的URL中<url-combine>`。
 .. _url-tree:
 
 文件导航 ``/tree``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-JupyterLab的文件导航URL采用经典笔记本的命名法; 这些URL是 ``/tree`` URLs:
+JupyterLab的文件导航URL采用经典 notebook 的命名法; 这些URL是 ``/tree`` URLs:
+
 .. code-block:: none
 
   http(s)://<server:port>/<lab-location>/lab/tree/path/to/notebook.ipynb
 
 
-输入此URL将以 :ref:`单文档模式 <tabs>` 在 JupyterLab 中打开笔记本。
+输入此URL将以 :ref:`单文档模式 <tabs>` 在 JupyterLab 中打开 notebook。
 
 .. _url-workspaces:
 
